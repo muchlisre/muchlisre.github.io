@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Profesional Saya</title>
+    
+    <!-- 1. Memuat Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- 2. CSS Kustom -->
+    <style>
+        /* Memberi jarak antar bagian (section) */
+        section {
+            padding: 60px 0;
+        }
+
+        /* Styling untuk Header (Hero Section) */
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        /* Styling untuk foto profil */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Styling untuk kartu portofolio */
+        .portfolio-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        /* Tombol "Scroll to Top" */
+        #to-top-btn {
+            display: none; /* Sembunyi secara default */
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #0d6efd; /* Warna biru Bootstrap */
+            color: white;
+            cursor: pointer;
+            padding: 12px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: opacity 0.3s ease;
+        }
+
+        #to-top-btn:hover {
+            background-color: #0b5ed7; /* Biru lebih gelap */
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav">
+
+    <!-- ==== NAVIGASI ==== -->
+    <!-- 'id="main-nav"' digunakan oleh Bootstrap ScrollSpy -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Profil Saya</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Link 'href' ini akan ditarget oleh jQuery untuk smooth scroll -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portofolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==== HEADER (HERO) ==== -->
+    <!-- 'id="home"' ditarget oleh link navigasi -->
+    <header class="hero-section text-center" id="home">
+        <div class="container">
+            <img src="https://placehold.co/150x150/0d6efd/white?text=Foto+Anda" alt="Foto Profil" class="profile-pic mb-3">
+            <h1 class="display-4">Nama Lengkap Anda</h1>
+            <p class="lead">Web Developer | Desainer | Penulis</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <!-- ==== TENTANG SAYA ==== -->
+    <!-- 'id="about"' ditarget oleh link navigasi -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Tentang Saya</h2>
+                    <p>Halo! Saya adalah seorang pengembang web yang berbasis di Jakarta dengan pengalaman lebih dari 5 tahun dalam menciptakan aplikasi web yang modern dan responsif. Saya bersemangat tentang teknologi dan senang mempelajari hal-hal baru.</p>
+                    <p>Di waktu luang, saya suka berkontribusi pada proyek open-source, membaca buku tentang teknologi, dan menikmati secangkir kopi.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <!-- Ganti placeholder ini dengan foto Anda -->
+                    <img src="https://placehold.co/600x400/f8f9fa/333?text=Foto+Aksi" alt="Tentang Saya" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== KEAHLIAN ==== -->
+    <!-- 'id="skills"' ditarget oleh link navigasi -->
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Keahlian Saya</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mt-3">HTML5</h5>
+                    <div class="progress" role="progressbar">
+                        <div class="progress-bar" style="width: 95%">95%</div>
+                    </div>
+                    <h5 class="mt-3">CSS3 & Bootstrap</h5>
+                    <div class="progress" role="progressbar">
+                        <div class="progress-bar" style="width: 90%">90%</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="mt-3">JavaScript & jQuery</h5>
+                    <div class="progress" role="progressbar">
+                        <div class="progress-bar" style="width: 85%">85%</div>
+                    </div>
+                    <h5 class="mt-3">PHP & MySQL</h5>
+                    <div class="progress" role="progressbar">
+                        <div class="progress-bar" style="width: 80%">80%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== PORTOFOLIO ==== -->
+    <!-- 'id="portfolio"' ditarget oleh link navigasi -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="text-center mb-5">Portofolio Saya</h2>
+            <div class="row g-4">
+                <!-- Proyek 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 portfolio-card">
+                        <img src="https://placehold.co/600x400/6c757d/white?text=Proyek+1" class="card-img-top" alt="Proyek 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Proyek 1</h5>
+                            <p class="card-text">Deskripsi singkat tentang proyek ini, teknologi yang digunakan, dan hasilnya.</p>
+                            <a href="#" class="btn btn-outline-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyek 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 portfolio-card">
+                        <img src="https://placehold.co/600x400/6c757d/white?text=Proyek+2" class="card-img-top" alt="Proyek 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Proyek 2</h5>
+                            <p class="card-text">Deskripsi singkat tentang proyek ini, teknologi yang digunakan, dan hasilnya.</p>
+                            <a href="#" class="btn btn-outline-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyek 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 portfolio-card">
+                        <img src="https://placehold.co/600x400/6c757d/white?text=Proyek+3" class="card-img-top" alt="Proyek 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Judul Proyek 3</h5>
+                            <p class="card-text">Deskripsi singkat tentang proyek ini, teknologi yang digunakan, dan hasilnya.</p>
+                            <a href="#" class="btn btn-outline-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== KONTAK ==== -->
+    <!-- 'id="contact"' ditarget oleh link navigasi -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Hubungi Saya</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <!-- Pesan error/sukses akan muncul di sini -->
+                    <div id="form-message" class="mb-3"></div>
+                    
+                    <!-- 'id="contact-form"' ditarget oleh jQuery untuk validasi -->
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="input-nama" class="form-label">Nama</label>
+                            <!-- 'id' pada input penting untuk mengambil nilainya -->
+                            <input type="text" class="form-control" id="input-nama" placeholder="Nama Anda">
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="input-email" placeholder="email@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-pesan" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="input-pesan" rows="5" placeholder="Pesan Anda"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="text-center py-4 bg-dark text-white">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Nama Anda. Dibuat dengan Bootstrap & jQuery.</p>
+        </div>
+    </footer>
+    
+    <!-- Tombol "Scroll to Top" -->
+    <!-- 'id="to-top-btn"' ditarget oleh jQuery -->
+    <button id="to-top-btn" title="Kembali ke atas">&uarr;</button> <!-- &uarr; adalah panah ke atas -->
+
+
+    <!-- 3. Memuat JavaScript -->
+    <!-- jQuery HARUS dimuat SEBELUM Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 4. Kode Kustom jQuery kita -->
+    <script>
+        // Memastikan kode berjalan setelah dokumen siap
+        $(document).ready(function(){
+            
+            // --- FITUR 1: SMOOTH SCROLL ---
+            // Memilih semua link <a> yang 'href'-nya dimulai dengan '#'
+            $('a[href^="#"]').on('click', function(event) {
+
+                // Pastikan 'this.hash' memiliki nilai sebelum menimpa perilaku default
+                if (this.hash !== "") {
+                    // Mencegah perilaku klik <a> standar (lompat)
+                    event.preventDefault();
+
+                    // Simpan hash (misal: #about, #contact)
+                    var hash = this.hash;
+
+                    // Ambil posisi 'top' dari elemen target
+                    // 'offset().top' adalah fungsi jQuery untuk mendapatkan koordinat
+                    var targetOffset = $(hash).offset().top;
+
+                    // Animasikan scroll
+                    $('html, body').animate({
+                        scrollTop: targetOffset - 70 // Kurangi 70px untuk memberi jarak dari navbar
+                    }, 800); // 800 milidetik (0.8 detik) untuk durasi animasi
+                }
+            });
+
+
+            // --- FITUR 2: TOMBOL SCROLL-TO-TOP ---
+            var toTopBtn = $('#to-top-btn');
+
+            // Tampilkan/sembunyikan tombol saat window di-scroll
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) { // Jika scroll lebih dari 200px
+                    toTopBtn.fadeIn(); // Tampilkan tombol
+                } else {
+                    toTopBtn.fadeOut(); // Sembunyikan tombol
+                }
+            });
+
+            // Klik pada tombol akan membawa ke atas
+            toTopBtn.click(function() {
+                $('html, body').animate({scrollTop: 0}, 800); // Scroll ke atas (posisi 0)
+            });
+            
+
+            // --- FITUR 3: VALIDASI FORM KONTAK SEDERHANA ---
+            $('#contact-form').submit(function(event) {
+                // Mencegah form dikirim secara default
+                event.preventDefault();
+                
+                // Ambil nilai dari input menggunakan 'id'-nya
+                var nama = $('#input-nama').val();
+                var email = $('#input-email').val();
+                var pesan = $('#input-pesan').val();
+                var formMessage = $('#form-message');
+
+                // Hapus pesan error/sukses sebelumnya
+                formMessage.empty().removeClass('alert-danger alert-success');
+
+                // Cek jika ada field yang kosong
+                if (nama === '' || email === '' || pesan === '') {
+                    // Tampilkan pesan error
+                    formMessage.addClass('alert alert-danger')
+                               .text('Harap isi semua field yang wajib diisi.');
+                } else {
+                    // Jika semua terisi (simulasi sukses)
+                    formMessage.addClass('alert alert-success')
+                               .text('Terima kasih! Pesan Anda telah terkirim.');
+                    
+                    // Kosongkan form setelah "sukses"
+                    $('#contact-form')[0].reset(); 
+                }
+            });
+            
+        });
+    </script>
+</body>
+</html>
+
+
