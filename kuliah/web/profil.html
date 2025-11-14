@@ -18,7 +18,7 @@
         /* Styling untuk Header (Hero Section) */
         .hero-section {
             background-color: #f8f9fa;
-            padding: 40vh 0;
+            padding: 20vh 0;
             height: 100vh;
         }
 
@@ -214,17 +214,21 @@
                         <div class="mb-3">
                             <label for="input-nama" class="form-label">Nama</label>
                             <!-- 'id' pada input penting untuk mengambil nilainya -->
-                            <input type="text" class="form-control" id="input-nama" placeholder="Nama Anda">
+                            <input type="text" class="form-control" id="nama" placeholder="Nama Anda">
                         </div>
                         <div class="mb-3">
                             <label for="input-email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="input-email" placeholder="email@example.com">
+                            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nomor_hp" class="form-label">Nomor WA</label>
+                            <input type="number" class="form-control" id="nomor_hp" placeholder="6281xxxxx">
                         </div>
                         <div class="mb-3">
                             <label for="input-pesan" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="input-pesan" rows="5" placeholder="Pesan Anda"></textarea>
+                            <textarea class="form-control" id="pesan" rows="5" placeholder="Pesan Anda"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+                        <button type="button" class="btn btn-primary w-100" onclick="kirim_pesan();">Kirim Pesan</button>
                     </form>
                 </div>
             </div>
@@ -286,10 +290,10 @@
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 200) { // Jika scroll lebih dari 200px
                     toTopBtn.fadeIn(); // Tampilkan tombol
-                    about.fadeIn(1000);
+                    about.fadeIn(2000);
                 } else {
                     toTopBtn.fadeOut(); // Sembunyikan tombol
-                    about.fadeOut(1000);
+                    about.fadeOut(500);
                 }
 
                 //jika scroll
@@ -331,6 +335,16 @@
             });
             
         });
+
+        function kirim_pesan(){
+            var nama = $("#nama").val();
+            var email = $("#email").val();
+            var nomor_hp = $("#nomor_hp").val();
+            var pesan = $("#pesan").val();
+            var link = `https://api.whatsapp.com/send?phone=6285719354041&text=Hi%2C%20saya%20dapat%20kontak%20dari%20web.%20Ini%20data%20saya%3A%0ANama%3A%20${nama}%0ANomor%3A%20${nomor_hp}%0AEmail%3A%20${email}%0APesan%3A%20${pesan}`;
+
+            window.open(link,"blank");
+        }
     </script>
 </body>
 </html>
