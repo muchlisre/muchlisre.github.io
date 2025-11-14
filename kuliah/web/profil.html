@@ -18,7 +18,8 @@
         /* Styling untuk Header (Hero Section) */
         .hero-section {
             background-color: #f8f9fa;
-            padding: 100px 0;
+            padding: 40vh 0;
+            height: 100vh;
         }
 
         /* Styling untuk foto profil */
@@ -278,14 +279,20 @@
 
             // --- FITUR 2: TOMBOL SCROLL-TO-TOP ---
             var toTopBtn = $('#to-top-btn');
+            var about = $('#about');
+            about.hide();
 
             // Tampilkan/sembunyikan tombol saat window di-scroll
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 200) { // Jika scroll lebih dari 200px
                     toTopBtn.fadeIn(); // Tampilkan tombol
+                    about.fadeIn(1000);
                 } else {
                     toTopBtn.fadeOut(); // Sembunyikan tombol
+                    about.fadeOut(1000);
                 }
+
+                //jika scroll
             });
 
             // Klik pada tombol akan membawa ke atas
