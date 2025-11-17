@@ -1,7 +1,7 @@
 const { log } = require('console');
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('db_fullstack_rps', 'root', 'bismillah',{
+const sequelize = new Sequelize('webservice', 'root', '',{
     host: 'localhost',
     dialect: 'mysql',
     logging: false,

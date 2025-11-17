@@ -43,16 +43,18 @@ app.get('/api/users', async (req, res) => { // <-- 1. Tambah 'async'
 
 
 // POST /api/users (Status Code diperbaiki)
-app.post('/api/users', async (req, res) => { // <-- 1. Tambah 'async'
+app.post('/api/users', async (req, res) => { 
+    // <-- 1. Tambah 'async'
     try {
         // 2. Ambil name & email dari body
         const { name, email } = req.body;
+        console.log(req.body);
 
         // 3. Simpan ke database menggunakan Sequelize
         //    Tidak perlu 'id', 'createdAt', 'updatedAt'. Semuanya otomatis.
         const newUser = await User.create({
-        name: name,
-        email: email
+            name: name,
+            email: email
         });
         
         // 4. Kirim respon sukses (sesuai standar RESTful)
