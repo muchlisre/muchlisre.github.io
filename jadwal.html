@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jadwal Sholat Digital - Lokasi Otomatis (Aladhan API)</title>
-  <meta name="description" content="Jadwal waktu sholat otomatis akurat berdasarkan lokasi GPS Anda saat ini menggunakan Aladhan API dengan metode Kementerian Agama Republik Indonesia (Kemenag)." />
+  <meta name="description"
+    content="Jadwal waktu sholat otomatis akurat berdasarkan lokasi GPS Anda saat ini menggunakan Aladhan API dengan metode Kementerian Agama Republik Indonesia (Kemenag)." />
   <link rel="icon" href="img/favicon.jpeg" type="image/jpeg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <style>
     :root {
@@ -52,7 +56,7 @@
       min-height: 100vh;
       overflow-x: hidden;
       line-height: 1.5;
-      background-image: 
+      background-image:
         radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
         radial-gradient(circle at 85% 25%, rgba(245, 158, 11, 0.08) 0%, transparent 35%),
         radial-gradient(circle at 50% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 45%);
@@ -68,6 +72,7 @@
       filter: blur(100px);
       opacity: 0.6;
     }
+
     .glow-1 {
       top: -100px;
       right: -100px;
@@ -75,6 +80,7 @@
       height: 450px;
       background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
     }
+
     .glow-2 {
       bottom: -150px;
       left: -150px;
@@ -171,8 +177,17 @@
     }
 
     @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.85);
+      }
     }
 
     .btn {
@@ -432,6 +447,7 @@
       overflow-x: auto;
       scrollbar-width: none;
     }
+
     .nav-tabs::-webkit-scrollbar {
       display: none;
     }
@@ -469,14 +485,22 @@
     .tab-pane {
       display: none;
     }
+
     .tab-pane.active {
       display: block;
       animation: fadeIn 0.3s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Prayer Grid */
@@ -693,6 +717,7 @@
       padding-bottom: 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
+
     .sunnah-item:last-child {
       padding-bottom: 0;
       border-bottom: none;
@@ -733,6 +758,7 @@
       font-size: 1.3rem;
       font-weight: 700;
     }
+
     .calendar-title-group p {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -827,10 +853,23 @@
       font-weight: 800;
       color: var(--text-dim);
     }
-    .cardinal-n { top: 12px; color: #ef4444; }
-    .cardinal-e { right: 14px; }
-    .cardinal-s { bottom: 12px; }
-    .cardinal-w { left: 14px; }
+
+    .cardinal-n {
+      top: 12px;
+      color: #ef4444;
+    }
+
+    .cardinal-e {
+      right: 14px;
+    }
+
+    .cardinal-s {
+      bottom: 12px;
+    }
+
+    .cardinal-w {
+      left: 14px;
+    }
 
     .qibla-needle {
       position: absolute;
@@ -1034,15 +1073,20 @@
 
     /* Skeleton Loading */
     .skeleton {
-      background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.04) 75%);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.09) 50%, rgba(255, 255, 255, 0.04) 75%);
       background-size: 200% 100%;
       animation: skeletonShimmer 1.8s infinite;
       border-radius: 6px;
     }
 
     @keyframes skeletonShimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
     }
 
     /* Footer */
@@ -1062,13 +1106,16 @@
 
     /* Responsive */
     @media (max-width: 900px) {
+
       .secondary-grid,
       .qibla-container {
         grid-template-columns: 1fr;
       }
+
       .countdown-spotlight {
         grid-template-columns: 1fr;
       }
+
       .date-wrapper {
         text-align: left;
       }
@@ -1078,42 +1125,54 @@
       .container {
         padding: 12px 14px 40px;
       }
+
       header {
         flex-direction: column;
         align-items: stretch;
         gap: 16px;
         padding: 16px;
       }
+
       .header-actions {
         justify-content: space-between;
       }
+
       .hero-card {
         padding: 20px 16px;
       }
+
       .city-name {
         font-size: 1.5rem;
       }
+
       .prayer-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
       }
+
       .prayer-card {
         padding: 14px;
       }
+
       .prayer-time {
         font-size: 1.55rem;
       }
+
       .time-block {
         min-width: 58px;
         padding: 8px 4px;
       }
+
       .time-val {
         font-size: 1.45rem;
       }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- ini perubahan -->
 
   <!-- Ambient Glow Effects -->
   <div class="ambient-glow glow-1"></div>
@@ -1126,7 +1185,8 @@
         <div class="brand-icon">
           <!-- Mosque SVG Icon -->
           <svg viewBox="0 0 24 24">
-            <path d="M12 2c.4 0 .8.2 1 .5l1.6 2.5c.3.5.9.8 1.4.8h.5c.6 0 1 .4 1 1v2c0 .6.4 1 1 1h.5c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H5c-.6 0-1-.4-1-1V10c0-.6.4-1 1-1h.5c.6 0 1-.4 1-1V6c0-.6.4-1 1-1h.5c.5 0 1.1-.3 1.4-.8L11 2.5c.2-.3.6-.5 1-.5z"/>
+            <path
+              d="M12 2c.4 0 .8.2 1 .5l1.6 2.5c.3.5.9.8 1.4.8h.5c.6 0 1 .4 1 1v2c0 .6.4 1 1 1h.5c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H5c-.6 0-1-.4-1-1V10c0-.6.4-1 1-1h.5c.6 0 1-.4 1-1V6c0-.6.4-1 1-1h.5c.5 0 1.1-.3 1.4-.8L11 2.5c.2-.3.6-.5 1-.5z" />
           </svg>
         </div>
         <div class="brand-text">
@@ -1145,15 +1205,17 @@
 
         <!-- Refresh GPS Button -->
         <button class="btn btn-primary" id="btnRefreshGps" title="Perbarui lokasi menggunakan GPS">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
           </svg>
           <span class="btn-text">Lokasi GPS</span>
         </button>
 
         <!-- Search / Change City Button -->
         <button class="btn" id="btnOpenCityModal" title="Pilih kota secara manual">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
@@ -1167,7 +1229,10 @@
       <div class="hero-top">
         <div class="location-wrapper">
           <div class="location-badge" id="locationStatus">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
             <span id="locStatusText">Mendeteksi Lokasi...</span>
           </div>
           <h2 class="city-name" id="cityNameDisplay">Memuat lokasi...</h2>
@@ -1185,7 +1250,10 @@
       <div class="countdown-spotlight">
         <div class="countdown-info">
           <div class="countdown-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
             Waktu Sholat Berikutnya
           </div>
           <div class="next-prayer-name">
@@ -1224,7 +1292,9 @@
         <span>Notifikasi Suara Adzan Aktif. Klik untuk mengetes audio adzan/chime.</span>
       </div>
       <button class="btn btn-gold" id="btnTestSound">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3" />
+        </svg>
         Uji Suara Notifikasi
       </button>
     </div>
@@ -1232,19 +1302,37 @@
     <!-- Navigation Tabs -->
     <nav class="nav-tabs" role="tablist">
       <button class="tab-btn active" data-tab="tab-today">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
         Jadwal Sholat Hari Ini
       </button>
       <button class="tab-btn" data-tab="tab-month">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+          <line x1="8" y1="14" x2="8" y2="14" />
+          <line x1="12" y1="14" x2="12" y2="14" />
+          <line x1="16" y1="14" x2="16" y2="14" />
+        </svg>
         Kalender Bulanan
       </button>
       <button class="tab-btn" data-tab="tab-qibla">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+        </svg>
         Arah Kiblat
       </button>
       <button class="tab-btn" data-tab="tab-asmaul">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
         Asmaul Husna
       </button>
     </nav>
@@ -1355,16 +1443,19 @@
           <div class="qibla-stat-card">
             <div class="label">Derajat Arah Kiblat</div>
             <div class="val" id="qiblaDegrees">295.2°</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Dari arah Utara kompas searah jarum jam (Barat Laut)</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Dari arah Utara kompas searah
+              jarum jam (Barat Laut)</p>
           </div>
           <div class="qibla-stat-card">
             <div class="label">Jarak ke Ka'bah (Makkah)</div>
             <div class="val" id="qiblaDistance">~7,900 km</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Dihitung dari koordinat lintang dan bujur posisi Anda saat ini</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Dihitung dari koordinat lintang
+              dan bujur posisi Anda saat ini</p>
           </div>
           <div class="qibla-stat-card">
             <div class="label">Metode Perhitungan</div>
-            <div style="font-weight: 600; font-size: 1rem; color: var(--primary); margin-top: 4px;">Formula Spherical Great Circle &bull; Aladhan API</div>
+            <div style="font-weight: 600; font-size: 1rem; color: var(--primary); margin-top: 4px;">Formula Spherical
+              Great Circle &bull; Aladhan API</div>
           </div>
         </div>
       </div>
@@ -1373,18 +1464,27 @@
     <!-- Tab 4: Asmaul Husna -->
     <div id="tab-asmaul" class="tab-pane">
       <div class="calendar-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
           <div>
             <h3>99 Asmaul Husna</h3>
-            <p style="color: var(--text-muted); font-size: 0.88rem;">Nama-nama Allah yang Maha Indah bersumber dari Al-Qur'an dan Sunnah</p>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Nama-nama Allah yang Maha Indah bersumber dari
+              Al-Qur'an dan Sunnah</p>
           </div>
           <button class="btn btn-primary" id="btnRandomAsmaul">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 3 21 3 21 8" />
+              <line x1="4" y1="20" x2="21" y2="3" />
+              <polyline points="21 16 21 21 16 21" />
+              <line x1="15" y1="15" x2="21" y2="21" />
+              <line x1="4" y1="4" x2="9" y2="9" />
+            </svg>
             Acak Asmaul Husna
           </button>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;" id="asmaulGrid">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;"
+          id="asmaulGrid">
           <!-- Populated by JS -->
         </div>
       </div>
@@ -1392,10 +1492,11 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 <strong>Muchlis RE</strong> &bull; Jadwal Sholat Berdasarkan API Resmi <a href="https://aladhan.com" target="_blank" rel="noopener">Aladhan.com</a> (Kementerian Agama RI).</p>
+      <p>&copy; 2026 <strong>Muchlis RE</strong> &bull; Jadwal Sholat Berdasarkan API Resmi <a
+          href="https://aladhan.com" target="_blank" rel="noopener">Aladhan.com</a> (Kementerian Agama RI).</p>
       <p style="margin-top: 6px;">
-        <a href="index.html">Beranda</a> &bull; 
-        <a href="quran.html">Al-Qur'an Online</a> &bull; 
+        <a href="index.html">Beranda</a> &bull;
+        <a href="quran.html">Al-Qur'an Online</a> &bull;
         <a href="jadwal.html">Jadwal Sholat</a>
       </p>
     </footer>
@@ -1410,7 +1511,8 @@
       </div>
 
       <div class="search-input-group">
-        <input type="text" class="search-input" id="citySearchInput" placeholder="Ketik nama kota (misal: Bandung, Surabaya, Medan)..." />
+        <input type="text" class="search-input" id="citySearchInput"
+          placeholder="Ketik nama kota (misal: Bandung, Surabaya, Medan)..." />
         <button class="btn btn-primary" id="btnApplyCitySearch">Cari</button>
       </div>
 
@@ -1433,7 +1535,8 @@
       </div>
 
       <div style="font-size: 0.8rem; color: var(--text-dim); text-align: center;">
-        Atau gunakan tombol <strong>"Lokasi GPS"</strong> untuk mendapatkan koordinat presisi langsung dari sensor perangkat Anda.
+        Atau gunakan tombol <strong>"Lokasi GPS"</strong> untuk mendapatkan koordinat presisi langsung dari sensor
+        perangkat Anda.
       </div>
     </div>
   </div>
@@ -1882,11 +1985,11 @@
       const R = 6371; // Earth's radius in km
       const dLat = (lat2 - lat1) * Math.PI / 180;
       const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = 
-        Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
-        Math.sin(dLon/2) * Math.sin(dLon/2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       return R * c;
     }
 
@@ -2074,4 +2177,5 @@
     });
   </script>
 </body>
+
 </html>
