@@ -1,1077 +1,995 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Muchlis RE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="BreezyCV - Resume / CV / vCard Template" />
-    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio" />
-    <meta name="author" content="lmpixels" />
-    <link rel="shortcut icon" href="img/favicon.jpeg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muchlis (@muchlisre) — Profil & Katalog Produk HTML Gemini</title>
+  <meta name="description" content="Halaman profil resmi Muchlis (@muchlisre) dan katalog produk/aplikasi interaktif berbasis HTML dari Gemini." />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #090d16;
+      color: #f1f5f9;
+    }
+    .glass {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.55), rgba(15, 23, 42, 0.75));
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.25);
+    }
+    .gemini-gradient {
+      background: linear-gradient(90deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gemini-badge {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
 
+  <!-- Background Glow Orbs -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/15 rounded-full blur-[120px]"></div>
+  </div>
 
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
-    <link rel="stylesheet" href="css/animations.css" type="text/css">
-    <link rel="stylesheet" href="css/perfect-scrollbar.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 glass border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#beranda" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">
+          M
+        </div>
+        <div>
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-indigo-400 transition">Muchlis</span>
+          <span class="hidden sm:inline-block text-xs text-slate-400 font-mono ml-1.5">@muchlisre</span>
+        </div>
+      </a>
 
-    <script src="js/modernizr.custom.js"></script>
-  <script async src='js/invisible.js'></script></head>
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+        <a href="#beranda" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Beranda</a>
+        <a href="#produk" class="px-3.5 py-2 rounded-lg text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+          Produk Gemini
+        </a>
+        <a href="#repositori" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Repositori</a>
+        <a href="#tentang" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Tentang</a>
+        <a href="#kontak" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Kontak</a>
+      </nav>
 
-  <body>
-    <!-- Animated Background -->
-    <div class="lm-animated-bg" style="background-image: url(img/main_bg.png);"></div>
-    <!-- /Animated Background -->
+      <!-- Action Button -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="openAddModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-600/25 transition">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>Tambah HTML Gemini</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <!-- Loading animation -->
-    <div class="preloader">
-      <div class="preloader-animation">
-        <div class="preloader-spinner">
+  <!-- Main Content -->
+  <main class="flex-1">
+    <!-- HERO SECTION -->
+    <section id="beranda" class="pt-14 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+        <!-- Avatar & Status -->
+        <div class="relative shrink-0">
+          <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl p-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-2xl shadow-indigo-500/20">
+            <img id="gh-avatar" src="https://github.com/muchlisre.png" alt="Muchlis Avatar" onerror="this.src='https://ui-avatars.com/api/?name=Muchlis&background=312e81&color=fff&size=256'" class="w-full h-full object-cover rounded-[20px] bg-slate-900" />
+          </div>
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium bg-emerald-950/90 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Aktif Berkarya
+          </div>
+        </div>
+
+        <!-- Bio & CTA -->
+        <div class="text-center lg:text-left flex-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium gemini-badge text-purple-200 mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-400"></i>
+            <span>Personal Hub & Etalase Produk Web AI</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Halo, saya <span id="gh-name" class="gemini-gradient">Muchlis</span>
+          </h1>
+
+          <p id="gh-bio" class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Software Developer & Kreator Digital. Membangun aplikasi web, eksperimen AI, dan berbagai produk interaktif berbasis HTML yang dikembangkan bersama <strong class="text-white font-semibold">Google Gemini</strong>.
+          </p>
+
+          <!-- Quick Stats -->
+          <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-slate-400">
+            <div class="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg">
+              <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i>
+              <span><strong id="stat-products" class="text-white">0</strong> Produk Gemini</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg">
+              <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i>
+              <span><strong id="stat-repos" class="text-white">-</strong> GitHub Repo</span>
+            </div>
+            <a href="https://github.com/muchlisre" target="_blank" rel="noopener" class="flex items-center gap-1.5 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white transition">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>github.com/muchlisre</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+          <!-- Hero Buttons -->
+          <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <a href="#produk" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-white text-slate-950 hover:bg-slate-200 transition shadow-lg">
+              <i data-lucide="layout-grid" class="w-4 h-4"></i>
+              Lihat Menu Produk
+            </a>
+            <button onclick="openAddModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm glass hover:bg-slate-800/80 text-white border border-slate-700 transition">
+              <i data-lucide="code-2" class="w-4 h-4 text-indigo-400"></i>
+              Tempel HTML dari Gemini
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- /Loading animation -->
+    </section>
 
-    <div class="page">
-      <div class="page-content">
-
-          <header id="site_header" class="header mobile-menu-hide">
-            <div class="header-content">
-              <div class="header-photo">
-                <img src="img/foto_ku.jpeg" alt="Muchlis RE">
-              </div>
-              <div class="header-titles">
-                <h2>Muchlis RE</h2>
-                <h4>Web Developer</h4>
-              </div>
-            </div>
-
-            <ul class="main-menu">
-              <li class="active">
-                <a href="#home" class="nav-anim">
-                  <span class="menu-icon lnr lnr-home"></span>
-                  <span class="link-text">Home</span>
-                </a>
-              </li>
-              <!-- <li>
-                <a href="#about-me" class="nav-anim">
-                  <span class="menu-icon lnr lnr-user"></span>
-                  <span class="link-text">About Me</span>
-                </a>
-              </li>
-              <li>
-                <a href="#resume" class="nav-anim">
-                  <span class="menu-icon lnr lnr-graduation-hat"></span>
-                  <span class="link-text">Resume</span>
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" class="nav-anim">
-                  <span class="menu-icon lnr lnr-briefcase"></span>
-                  <span class="link-text">Portfolio</span>
-                </a>
-              </li> -->
-              <li>
-                <a href="#decoding" class="nav-anim">
-                  <span class="menu-icon lnr lnr-code"></span>
-                  <span class="link-text">Decoding</span>
-                </a>
-              </li>
-              <!-- <li>
-                <a href="#contact" class="nav-anim">
-                  <span class="menu-icon lnr lnr-envelope"></span>
-                  <span class="link-text">Contact</span>
-                </a>
-              </li> -->
-            </ul>
-
-            <div class="social-links">
-              <ul>
-                <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-              </ul>
-            </div>
-
-            <div class="header-buttons">
-              <a href="#" target="_blank" class="btn btn-primary">Download CV</a>
-            </div>
-
-            <div class="copyrights">© 2021</div>
-          </header>
-
-          <!-- Mobile Navigation -->
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- MENU PRODUK SECTION (HTML DARI GEMINI) -->
+    <section id="produk" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-800/80">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">
+            <i data-lucide="Cpu" class="w-4 h-4"></i>
+            <span>Katalog Produk & Aplikasi</span>
           </div>
-          <!-- End Mobile Navigation -->
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Menu Produk (HTML Gemini)</h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-1.5 max-w-2xl">
+            Kumpulan aplikasi mini, kalkulator, game, dan tools interaktif satu-file (<code class="text-indigo-300 font-mono text-xs bg-indigo-950/60 px-1.5 py-0.5 rounded">.html</code>) yang dibuat dengan Gemini. Bisa langsung dijalankan di halaman ini atau dibuka penuh!
+          </p>
+        </div>
 
-          <!-- Arrows Nav -->
-          <div class="lmpixels-arrows-nav">
-            <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
-            <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+        <!-- Search & Filter Controls -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input
+              id="search-produk"
+              type="text"
+              placeholder="Cari produk..."
+              oninput="renderProducts()"
+              class="w-full sm:w-56 pl-9 pr-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+            />
           </div>
-          <!-- End Arrows Nav -->
-
-          <div class="content-area">
-            <div class="animated-sections">
-              <!-- Home Subpage -->
-              <section data-id="home" class="animated-section start-page">
-                <div class="section-content vcentered">
-
-                    <div class="row">
-                      <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="title-block">
-                          <h2>Muchlis RE</h2>
-                          <div class="owl-carousel text-rotation">
-                            <div class="item">
-                              <div class="sp-subtitle">Web Designer</div>
-                            </div>
-
-                            <div class="item">
-                              <div class="sp-subtitle">Frontend-developer</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                </div>
-              </section>
-              <!-- End of Home Subpage -->
-
-              <!-- About Me Subpage -->
-              <section data-id="about-me" class="animated-section">
-                <div class="page-title">
-                  <h2>About <span>Me</span></h2>
-                </div>
-
-                <div class="section-content">
-                  <!-- Personal Information -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-7">
-                      <p>Proin volutpat mauris ac pellentesque pharetra. Suspendisse congue elit vel odio suscipit, sit amet tempor nisl imperdiet. Quisque ex justo, faucibus ut mi in, condimentum finibus dolor. Aliquam vitae hendrerit dolor, eget imperdiet mauris. Maecenas et ante id ipsum condimentum dictum et vel massa. Ut in imperdiet dolor, vel consectetur dui.</p>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-5">
-                      <div class="info-list">
-                        <ul>
-                          <li>
-                            <span class="title">Age</span>
-                            <span class="value">32</span>
-                          </li>
-
-                          <li>
-                            <span class="title">Residence</span>
-                            <span class="value">USA</span>
-                          </li>
-
-                          <li>
-                            <span class="title">Address</span>
-                            <span class="value">88 Some Street, Some Town</span>
-                          </li>
-
-                          <li>
-                            <span class="title">e-mail</span>
-                            <span class="value"><a href="https://lmpixels.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="284d45494144684d50494558444d064b4745">[email&#160;protected]</a></span>
-                          </li>
-
-                          <li>
-                            <span class="title">Phone</span>
-                            <span class="value">+0123 123 456 789</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Personal Information -->
-
-                  <div class="white-space-50"></div>
-
-                  <!-- Services -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="block-title">
-                        <h3>What <span>I Do</span></h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="col-inner">
-                        <div class="info-list-w-icon">
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-store"></i>
-                            </div>
-                            <div class="ci-text">
-                              <h4>Ecommerce</h4>
-                              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
-                            </div>
-                          </div>
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-laptop-phone"></i>
-                            </div><div class="ci-text">
-                              <h4>Web Design</h4>
-                              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="col-inner">
-                        <div class="info-list-w-icon">
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-pencil"></i>
-                            </div>
-                            <div class="ci-text">
-                              <h4>Copywriting</h4>
-                              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
-                            </div>
-                          </div>
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-flag"></i>
-                            </div><div class="ci-text">
-                              <h4>Management</h4>
-                              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Services -->
-
-                  <div class="white-space-30"></div>
-
-                  <!-- Testimonials -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="block-title">
-                        <h3>Testimonials</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="testimonials owl-carousel">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial">
-                          <div class="img">
-                            <img src="img/testimonials/testimonial-1.jpg" alt="Muchlis RE">
-                          </div>
-                          <div class="text">
-                            <p>Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.</p>
-                          </div>
-
-                          <div class="author-info">
-                            <h4 class="author">Julia Hickman</h4>
-                            <h5 class="company">Omni Source</h5>
-                            <div class="icon">
-                              <i class="fas fa-quote-right"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Testimonial 1 -->
-
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial">
-                          <div class="img">
-                            <img src="img/testimonials/testimonial-2.jpg" alt="Muchlis RE">
-                          </div>
-                          <div class="text">
-                            <p>Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.</p>
-                          </div>
-
-                          <div class="author-info">
-                            <h4 class="author">Robert Watkins</h4>
-                            <h5 class="company">Endicott Shoes</h5>
-                            <div class="icon">
-                              <i class="fas fa-quote-right"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Testimonial 2 -->
-
-                        <!-- Testimonial 3 -->
-                        <div class="testimonial">
-                          <div class="img">
-                            <img src="img/testimonials/testimonial-3.jpg" alt="Muchlis RE">
-                          </div>
-                          <div class="text">
-                            <p>Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.</p>
-                          </div>
-
-                          <div class="author-info">
-                            <h4 class="author">Kristin Carroll</h4>
-                            <h5 class="company">Helping Hand</h5>
-                            <div class="icon">
-                              <i class="fas fa-quote-right"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Testimonial 3 -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Testimonials -->
-
-                  <div class="white-space-50"></div>
-
-                  <!-- Clients -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="block-title">
-                        <h3>Cilents</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="clients owl-carousel">
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-1.png" alt="Logo">
-                          </a>
-                        </div>
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-2.png" alt="Logo">
-                          </a>
-                        </div>
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-3.png" alt="Logo">
-                          </a>
-                        </div>
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-4.png" alt="Logo">
-                          </a>
-                        </div>
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-5.png" alt="Logo">
-                          </a>
-                        </div>
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-6.png" alt="Logo">
-                          </a>
-                        </div>
-
-                        <div class="client-block">
-                          <a href="#" target="_blank" title="Logo">
-                            <img src="img/clients/client-7.png" alt="Logo">
-                          </a>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Clients -->
-
-                  <div class="white-space-50"></div>
-
-                  <!-- Pricing -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-
-                      <div class="block-title">
-                        <h3>Pricing</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class=" col-xs-12 col-sm-12 ">
-                      <div class="fw-pricing clearfix row">
-
-                        <div class="fw-package-wrap col-md-6 ">
-                          <div class="fw-package">
-                            <div class="fw-heading-row">
-                              <span>Silver</span>
-                            </div>
-
-                            <div class="fw-pricing-row">
-                              <span>$64</span>
-                              <small>per month</small>
-                            </div>
-
-                            <div class="fw-button-row">
-                              <a href="#" target="_self" class="btn btn-secondary">Free Trial</a>
-                            </div>
-
-                            <div class="fw-default-row">Lorem ipsum dolor</div>
-                            <div class="fw-default-row">Pellentesque scelerisque</div>
-                            <div class="fw-default-row">Morbi eu sagittis</div>
-                          </div>
-                        </div>
-
-                        <div class="fw-package-wrap col-md-6 highlight-col ">
-                          <div class="fw-package">
-                            <div class="fw-heading-row">
-                              <span>Gold</span>
-                            </div>
-
-                            <div class="fw-pricing-row">
-                              <span>$128</span>
-                              <small>per month</small>
-                            </div>
-
-                            <div class="fw-button-row">
-                              <a href="#" target="_self" class="btn btn-primary">Free Trial</a>
-                            </div>
-
-                            <div class="fw-default-row">Lorem ipsum dolor</div>
-                            <div class="fw-default-row">Pellentesque scelerisque</div>
-                            <div class="fw-default-row">Morbi eu sagittis</div>
-                            <div class="fw-default-row">Donec non diam</div>
-                            <div class="fw-default-row"></div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Pricing -->
-
-                  <div class="white-space-50"></div>
-
-                  <!-- Fun Facts -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-
-                      <div class="block-title">
-                        <h3>Fun <span>Facts</span></h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="fun-fact gray-default">
-                        <i class="lnr lnr-heart"></i>
-                        <h4>Happy Clients</h4>
-                        <span class="fun-fact-block-value">578</span>
-                        <span class="fun-fact-block-text"></span>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="fun-fact gray-default">
-                        <i class="lnr lnr-clock"></i>
-                        <h4>Working Hours</h4>
-                        <span class="fun-fact-block-value">4,780</span>
-                        <span class="fun-fact-block-text"></span>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4 ">
-                      <div class="fun-fact gray-default">
-                        <i class="lnr lnr-star"></i>
-                        <h4>Awards Won</h4>
-                        <span class="fun-fact-block-value">15</span>
-                        <span class="fun-fact-block-text"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Fun Facts -->
-
-                </div>
-              </section>
-              <!-- End of About Me Subpage -->
-
-              <!-- Resume Subpage -->
-              <section data-id="resume" class="animated-section">
-                <div class="page-title">
-                  <h2>Resume</h2>
-                </div>
-
-                <div class="section-content">
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-7">
-
-                      <div class="block-title">
-                        <h3>Education</h3>
-                      </div>
-
-                      <div class="timeline timeline-second-style clearfix">
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2008</h5>
-                            <span class="item-company">University of Studies</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Frontend Development</h4>
-                            <p>Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante.</p>
-                          </div>
-                        </div>
-
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2007</h5>
-                            <span class="item-company">University of Studies</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Graphic Design</h4>
-                            <p>Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor.</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="white-space-50"></div>
-
-                      <div class="block-title">
-                        <h3>Experience</h3>
-                      </div>
-
-                      <div class="timeline timeline-second-style clearfix">
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2016 - Current</h5>
-                            <span class="item-company">Google</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Lead Ui/Ux Designer</h4>
-                            <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
-                          </div>
-                        </div>
-
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2013 - 2016</h5>
-                            <span class="item-company">Adobe</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Senior Ui/Ux Designer</h4>
-                            <p>Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla tristique, ornare felis id, congue libero. Nam volutpat euismod quam.</p>
-                          </div>
-                        </div>
-
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2011 - 2013</h5>
-                            <span class="item-company">Google</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Junior Ui/Ux Designer</h4>
-                            <p>Duis mollis nunc quis quam viverra venenatis. Nulla nulla arcu, congue vitae nunc ac, sodales ultricies diam. Nullam justo leo, tincidunt sit amet.</p>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <!-- Skills & Certificates -->
-                    <div class="col-xs-12 col-sm-5">
-                      <!-- Design Skills -->
-                      <div class="block-title">
-                        <h3>Design <span>Skills</span></h3>
-                      </div>
-
-                      <div class="skills-info skills-second-style">
-                        <!-- Skill 1 -->
-                        <div class="skill clearfix">
-                          <h4>Web Design</h4>
-                          <div class="skill-value">95%</div>
-                        </div>
-                        <div class="skill-container skill-1">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 1 -->
-
-                        <!-- Skill 2 -->
-                        <div class="skill clearfix">
-                          <h4>Print Design</h4>
-                          <div class="skill-value">65%</div>
-                        </div>
-                        <div class="skill-container skill-2">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 2 -->
-
-                        <!-- Skill 3 -->
-                        <div class="skill clearfix">
-                          <h4>Logo Design</h4>
-                          <div class="skill-value">80%</div>
-                        </div>
-                        <div class="skill-container skill-3">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 3 -->
-
-                        <!-- Skill 4 -->
-                        <div class="skill clearfix">
-                          <h4>Graphic Design</h4>
-                          <div class="skill-value">90%</div>
-                        </div>
-                        <div class="skill-container skill-4">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 4 -->
-
-                      </div>
-                      <!-- End of Design Skills -->
-
-                      <div class="white-space-10"></div>
-
-                      <!-- Coding Skills -->
-                      <div class="block-title">
-                        <h3>Coding <span>Skills</span></h3>
-                      </div>
-
-                      <div class="skills-info skills-second-style">
-                        <!-- Skill 5 -->
-                        <div class="skill clearfix">
-                          <h4>JavaScript</h4>
-                          <div class="skill-value">95%</div>
-                        </div>
-                        <div class="skill-container skill-5">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 5 -->
-
-                        <!-- Skill 6 -->
-                        <div class="skill clearfix">
-                          <h4>PHP</h4>
-                          <div class="skill-value">85%</div>
-                        </div>
-                        <div class="skill-container skill-6">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 6 -->
-
-                        <!-- Skill 7 -->
-                        <div class="skill clearfix">
-                          <h4>HTML/CSS</h4>
-                          <div class="skill-value">100%</div>
-                        </div>
-                        <div class="skill-container skill-7">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 7 -->
-
-                        <!-- Skill 8 -->
-                        <div class="skill clearfix">
-                          <h4>Smarty/Twig</h4>
-                          <div class="skill-value">75%</div>
-                        </div>
-                        <div class="skill-container skill-8">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 8 -->
-
-                        <!-- Skill 9 -->
-                        <div class="skill clearfix">
-                          <h4>Perl</h4>
-                          <div class="skill-value">90%</div>
-                        </div>
-                        <div class="skill-container skill-9">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 9 -->
-                      </div>
-                      <!-- End of Coding Skills -->
-
-                      <div class="white-space-10"></div>
-
-                      <!-- Knowledges -->
-                      <div class="block-title">
-                        <h3>Knowledges</h3>
-                      </div>
-
-                      <ul class="knowledges">
-                        <li>Marketing</li>
-                        <li>Print</li>
-                        <li>Digital Design</li>
-                        <li>Social Media</li>
-                        <li>Time Management</li>
-                        <li>Communication</li>
-                        <li>Problem-Solving</li>
-                        <li>Social Networking</li>
-                        <li>Flexibility</li>
-                      </ul>
-                      <!-- End of Knowledges -->
-                    </div>
-                    <!-- End of Skills & Certificates -->
-                  </div>
-
-                  <div class="white-space-50"></div>
-
-                  <!-- Certificates -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="block-title">
-                        <h3>Certificates</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <!-- Certificate 1 -->
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="certificate-item clearfix">
-                        <div class="certi-logo">
-                          <img src="img/clients/client-1.png" alt="logo">
-                        </div>
-
-                        <div class="certi-content">
-                          <div class="certi-title">
-                            <h4>Psyhology of Intertnation Design</h4>
-                          </div>
-                          <div class="certi-id">
-                            <span>Membership ID: XXXX</span>
-                          </div>
-                          <div class="certi-date">
-                            <span>19 April 2018</span>
-                          </div>
-                          <div class="certi-company">
-                            <span></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of Certificate 1 -->
-
-                    <!-- Certificate 2 -->
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="certificate-item clearfix">
-                        <div class="certi-logo">
-                          <img src="img/clients/client-1.png" alt="logo">
-                        </div>
-
-                        <div class="certi-content">
-                          <div class="certi-title">
-                            <h4>Psyhology of Intertnation Design</h4>
-                          </div>
-                          <div class="certi-id">
-                            <span>Membership ID: XXXX</span>
-                          </div>
-                          <div class="certi-date">
-                            <span>19 April 2018</span>
-                          </div>
-                          <div class="certi-company">
-                            <span></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of Certificate 2 -->
-
-                  </div>
-                  <!-- End of Certificates -->
-                </div>
-              </section>
-              <!-- End of Resume Subpage -->
-
-              <!-- Portfolio Subpage -->
-              <section data-id="portfolio" class="animated-section">
-                <div class="page-title">
-                  <h2>Portfolio</h2>
-                </div>
-
-                <div class="section-content">
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <!-- Portfolio Content -->
-                      <div class="portfolio-content">
-
-                        <ul class="portfolio-filters">
-                          <li class="active">
-                            <a class="filter btn btn-sm btn-link" data-group="category_all">All</a>
-                          </li>
-                          <li>
-                            <a class="filter btn btn-sm btn-link" data-group="category_detailed">Detailed</a>
-                          </li>
-                          <li>
-                            <a class="filter btn btn-sm btn-link" data-group="category_mockups">Mockups</a>
-                          </li>
-                          <li>
-                            <a class="filter btn btn-sm btn-link" data-group="category_soundcloud">SoundCloud</a>
-                          </li>
-                          <li>
-                            <a class="filter btn btn-sm btn-link" data-group="category_vimeo-videos">Vimeo Videos</a>
-                          </li>
-                          <li>
-                            <a class="filter btn btn-sm btn-link" data-group="category_youtube-videos">YouTube Videos</a>
-                          </li>
-                        </ul>
-
-                        <!-- Portfolio Grid -->
-                        <div class="portfolio-grid three-columns">
-
-                          <figure class="item lbaudio" data-groups='["category_all", "category_soundcloud"]'>
-                            <div class="portfolio-item-img">
-                              <img src="img/portfolio/1.jpg" alt="SoundCloud Audio" title="" />
-                              <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true" class="lightbox mfp-iframe" title="SoundCloud Audio"></a>
-                            </div>
-
-                            <i class="fa fa-volume-up"></i>
-                            <h4 class="name">SoundCloud Audio</h4>
-                            <span class="category">SoundCloud</span>
-                          </figure>
-
-                          <figure class="item standard" data-groups='["category_all", "category_detailed"]'>
-                            <div class="portfolio-item-img">
-                              <img src="img/portfolio/2.jpg" alt="Media Project 2" title="" />
-                              <a href="portfolio-1.html" class="ajax-page-load"></a>
-                            </div>
-
-                            <i class="far fa-file-alt"></i>
-                            <h4 class="name">Detailed Project 2</h4>
-                            <span class="category">Detailed</span>
-                          </figure>
-
-                          <figure class="item lbvideo" data-groups='["category_all", "category_vimeo-videos"]'>
-                            <div class="portfolio-item-img">
-                              <img src="img/portfolio/3.jpg" alt="Vimeo Video 1" title="" />
-                              <a href="https://player.vimeo.com/video/158284739" class="lightbox mfp-iframe" title="Vimeo Video 1"></a>
-                            </div>
-
-                            <i class="fas fa-video"></i>
-                            <h4 class="name">Vimeo Video 1</h4>
-                            <span class="category">Vimeo Videos</span>
-                          </figure>
-
-                          <figure class="item standard" data-groups='["category_all", "category_detailed"]'>
-                            <div class="portfolio-item-img">
-                              <img src="img/portfolio/4.jpg" alt="Media Project 1" title="" />
-                              <a href="portfolio-1.html" class="ajax-page-load"></a>
-                            </div>
-
-                            <i class="far fa-file-alt"></i>
-                            <h4 class="name">Detailed Project 1</h4>
-                            <span class="category">Detailed</span>
-                          </figure>
-
-                          <figure class="item lbimage" data-groups='["category_all", "category_mockups"]'>
-                            <div class="portfolio-item-img">
-                              <img src="img/portfolio/5.jpg" alt="Mockup Design 1" title="" />
-                              <a class="lightbox" title="Mockup Design 1" href="img/portfolio/full/5.jpg"></a>
-                            </div>
-
-                            <i class="far fa-image"></i>
-                            <h4 class="name">Mockup Design 1</h4>
-                            <span class="category">Mockups</span>
-                          </figure>
-
-                          <figure class="item lbvideo" data-groups='["category_all", "category_youtube-videos"]'>
-                            <div class="portfolio-item-img">
-                              <img src="img/portfolio/6.jpg" alt="YouTube Video 1" title="" />
-                              <a href="https://www.youtube.com/embed/bg0gv2YpIok" class="lightbox mfp-iframe" title="YouTube Video 1"></a>
-                            </div>
-
-                            <i class="fas fa-video"></i>
-                            <h4 class="name">YouTube Video 1</h4>
-                            <span class="category">YouTube Videos</span>
-                          </figure>
-                        </div>
-                      </div>
-                      <!-- End of Portfolio Content -->
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- End of Portfolio Subpage -->
-
-              <!-- Blog Subpage -->
-              <section data-id="decoding" class="animated-section">
-                <div class="page-title">
-                  <h2>Decoding</h2>
-                </div>
-
-                <div class="section-content">
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="blog-masonry two-columns clearfix">
-
-                        <!-- Blog Post 1 -->
-                        <div class="item post-1">
-                          <div class="blog-card">
-                            <div class="media-block">
-                              <div class="category">
-                                <a href="#" title="View all posts in Design">STMIK Antar Bangsa</a>
-                              </div>
-                              <a href="quran/index.html">
-                                <img src="img/blog/quran.png" class="size-blog-masonry-image-two-c" alt="Aplikasi Qur'an Sederhana" title="" />
-                                <div class="mask"></div>
-                              </a>
-                            </div>
-                            <div class="post-info">
-                              <div class="post-date">24 Agustus 2021</div>
-                              <a href="blog-post-1.html">
-                                <h4 class="blog-item-title">Aplikasi Qur'an Sederhana</h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Blog Post 1 -->
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-              </section>
-              <!-- End of Blog Subpage -->
-
-              <!-- Contact Subpage -->
-              <section data-id="contact" class="animated-section">
-                <div class="page-title">
-                  <h2>Contact</h2>
-                </div>
-
-                <div class="section-content">
-
-                  <div class="row">
-                    <!-- Contact Info -->
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="lm-info-block gray-default">
-                        <i class="lnr lnr-map-marker"></i>
-                        <h4>San Francisco</h4>
-                        <span class="lm-info-block-value"></span>
-                        <span class="lm-info-block-text"></span>
-                      </div>
-
-                      <div class="lm-info-block gray-default">
-                        <i class="lnr lnr-phone-handset"></i>
-                        <h4>415-832-2000</h4>
-                        <span class="lm-info-block-value"></span>
-                        <span class="lm-info-block-text"></span>
-                      </div>
-
-                      <div class="lm-info-block gray-default">
-                        <i class="lnr lnr-envelope"></i>
-                        <h4><a href="https://lmpixels.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f6979a938eb6938e979b869a93d895999b">[email&#160;protected]</a></h4>
-                        <span class="lm-info-block-value"></span>
-                        <span class="lm-info-block-text"></span>
-                      </div>
-
-                      <div class="lm-info-block gray-default">
-                        <i class="lnr lnr-checkmark-circle"></i>
-                        <h4>Freelance Available</h4>
-                        <span class="lm-info-block-value"></span>
-                        <span class="lm-info-block-text"></span>
-                      </div>
-
-
-                    </div>
-                    <!-- End of Contact Info -->
-
-                    <!-- Contact Form -->
-                    <div class="col-xs-12 col-sm-8">
-                      <div id="map" class="map">
-                          <div class="lmpixels-map">
-                            	<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=San%20Francisco%2C%20S601%20Townsend%20Street%2C%20California%2C%20USA&amp;amp;t=m&amp;amp;z=16&amp;amp;output=embed&amp;amp;iwloc=near&amp;output=embed"></iframe>
-                            </div>
-                      </div>
-                      <div class="block-title">
-                        <h3>How Can I <span>Help You?</span></h3>
-                      </div>
-
-                      <form id="contact_form" class="contact-form" action="https://lmpixels.com/demo/breezycv/dark/1/contact_form/contact_form.php" method="post">
-
-                        <div class="messages"></div>
-
-                        <div class="controls two-columns">
-                          <div class="fields clearfix">
-                            <div class="left-column">
-                              <div class="form-group form-group-with-icon">
-                                <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Name is required.">
-                                <label>Full Name</label>
-                                <div class="form-control-border"></div>
-                                <div class="help-block with-errors"></div>
-                              </div>
-
-                              <div class="form-group form-group-with-icon">
-                                <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="Valid email is required.">
-                                <label>Email Address</label>
-                                <div class="form-control-border"></div>
-                                <div class="help-block with-errors"></div>
-                              </div>
-
-                              <div class="form-group form-group-with-icon">
-                                <input id="form_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="Subject is required.">
-                                <label>Subject</label>
-                                <div class="form-control-border"></div>
-                                <div class="help-block with-errors"></div>
-                              </div>
-                            </div>
-                            <div class="right-column">
-                              <div class="form-group form-group-with-icon">
-                                <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7" required="required" data-error="Please, leave me a message."></textarea>
-                                <label>Message</label>
-                                <div class="form-control-border"></div>
-                                <div class="help-block with-errors"></div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
-
-                          <input type="submit" class="button btn-send" value="Send message">
-                        </div>
-                      </form>
-                    </div>
-                    <!-- End of Contact Form -->
-                  </div>
-
-                </div>
-              </section>
-              <!-- End of Contact Subpage -->
+          <button onclick="openGuideModal()" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition">
+            <i data-lucide="help-circle" class="w-4 h-4 text-indigo-400"></i>
+            <span>Cara Tambah Permanen</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Pills -->
+      <div id="category-filters" class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
+        <!-- Diisi otomatis via JS -->
+      </div>
+
+      <!-- Products Grid -->
+      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Diisi otomatis via JS -->
+      </div>
+    </section>
+
+    <!-- GITHUB REPOSITORIES SECTION -->
+    <section id="repositori" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-800/80">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white flex items-center gap-2.5">
+            <i data-lucide="folder-git-2" class="w-6 h-6 text-indigo-400"></i>
+            Repositori GitHub Terbaru
+          </h2>
+          <p class="text-slate-400 text-sm mt-1">Proyek open-source yang disinkronkan langsung dari GitHub @muchlisre.</p>
+        </div>
+        <a href="https://github.com/muchlisre?tab=repositories" target="_blank" rel="noopener" class="text-xs sm:text-sm font-medium text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+          <span>Lihat Semua</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div id="repos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="col-span-full text-center py-8 text-slate-500 text-sm">Memuat repositori dari GitHub...</div>
+      </div>
+    </section>
+
+    <!-- TENTANG & KEAHLIAN SECTION -->
+    <section id="tentang" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-800/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <i data-lucide="user-check" class="w-5 h-5 text-indigo-400"></i>
+            Tentang Saya
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Saya senang mengeksplorasi teknologi web modern, otomasi, dan pemanfaatan AI generatif seperti <strong class="text-white">Google Gemini</strong> untuk mempercepat pembuatan prototipe produk digital yang fungsional.
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Halaman ini berfungsi sebagai profil sekaligus katalog terpusat tempat saya membagikan hasil eksperimen kode HTML dari Gemini agar mudah diakses kapan saja.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <i data-lucide="terminal" class="w-5 h-5 text-purple-400"></i>
+            Fokus & Teknologi
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+              <i data-lucide="code" class="w-4 h-4 text-blue-400 shrink-0"></i>
+              <span>HTML5 / CSS / JS</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+              <i data-lucide="sparkles" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Gemini AI Apps</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+              <i data-lucide="globe" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span>Web Development</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+              <i data-lucide="server" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>Backend & API</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+              <i data-lucide="smartphone" class="w-4 h-4 text-pink-400 shrink-0"></i>
+              <span>Responsive UI</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+              <i data-lucide="git-pull-request" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+              <span>Git & Open Source</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- KONTAK SECTION -->
+    <section id="kontak" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-800/80">
+      <div class="glass-card rounded-3xl p-8 sm:p-10 text-center max-w-3xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Mari Terhubung</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 mb-6">
+          Punya ide proyek menarik atau ingin berdiskusi seputar pembuatan aplikasi web & AI? Hubungi saya melalui kanal berikut:
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="mailto:muchlis.re@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>muchlis.re@gmail.com</span>
+          </a>
+          <a href="https://github.com/muchlisre" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold transition">
+            <i data-lucide="github" class="w-4 h-4"></i>
+            <span>GitHub @muchlisre</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Muchlis (@muchlisre). Dibuat untuk GitHub Pages & Katalog HTML Gemini.</p>
+      <div class="flex items-center gap-4">
+        <a href="#beranda" class="hover:text-slate-300 transition">Ke Atas ↑</a>
       </div>
     </div>
+  </footer>
 
-    <script data-cfasync="false" src="https://lmpixels.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>
-    <script src="js/animating.js"></script>
+  <!-- ========================================================= -->
+  <!-- MODAL 1: LIVE PREVIEW PRODUK HTML GEMINI                  -->
+  <!-- ========================================================= -->
+  <div id="preview-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex flex-col">
+    <div class="h-14 px-4 sm:px-6 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+      <div class="flex items-center gap-3 min-w-0">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+        <h3 id="preview-title" class="font-bold text-white text-sm sm:text-base truncate">Preview Produk</h3>
+        <span id="preview-badge" class="hidden sm:inline-block text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">HTML Gemini</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a id="preview-open-tab" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 transition">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>Buka Tab Penuh</span>
+        </a>
+        <button onclick="closePreviewModal()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white transition" title="Tutup Preview">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+    <div class="flex-1 bg-white relative">
+      <iframe id="preview-iframe" class="w-full h-full border-0" sandbox="allow-scripts allow-forms allow-modals allow-popups allow-same-origin"></iframe>
+    </div>
+  </div>
 
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+  <!-- ========================================================= -->
+  <!-- MODAL 2: TAMBAH / TEMPEL HTML DARI GEMINI                 -->
+  <!-- ========================================================= -->
+  <div id="add-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl my-8">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Tambah Produk HTML dari Gemini</h3>
+            <p class="text-xs text-slate-400">Tempel kode HTML dari Gemini atau tautkan file di folder <code class="text-indigo-300">produk/</code></p>
+          </div>
+        </div>
+        <button onclick="closeAddModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
 
-    <script src='js/perfect-scrollbar.min.js'></script>
-    <script src='js/jquery.shuffle.min.js'></script>
-    <script src='js/masonry.pkgd.min.js'></script>
-    <script src='js/owl.carousel.min.js'></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
+      <form id="add-product-form" onsubmit="handleSaveProduct(event)" class="mt-5 space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Nama Produk / Aplikasi *</label>
+            <input id="inp-title" type="text" required placeholder="Contoh: Kalkulator KPR Pintar" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Kategori</label>
+            <input id="inp-category" type="text" placeholder="Contoh: Tools, Bisnis, Game, Edukasi" value="Tools AI" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
+          </div>
+        </div>
 
-    <script src="js/validator.js"></script>
-    <script src="js/main.js"></script>
-  <script type="text/javascript">(function(){window['__CF$cv$params']={r:'68341f08f9e301dd',m:'2a3bb246b280f5c28e3aeea30ca41ee184066e96-1629719405-1800-ARPwAUpP2Smm8iSzvmSNc9YjOIodmKLP3WAHxjrEuoOf/mltReYtMOSbDZDlobsV6HWuzqwsk3Wg00MrE5GvbiRsg76tiXLdUMtVEIeA6n4GrFOH0mwRP/RVAIvAzVzZdC1e8DYdunMgguLP3wHdvTkx3C3PGZITLlM+9Y8NObUz',s:[0x5aa94e9d01,0xf15eac380e],u:'/cdn-cgi/challenge-platform/h/b'}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"68341f08f9e301dd","version":"2021.8.1","r":1,"token":"94b99c0576dc45bf9d669fb5e9256829","si":10}'></script>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Deskripsi Singkat *</label>
+          <input id="inp-desc" type="text" required placeholder="Penjelasan singkat fungsi aplikasi HTML dari Gemini ini..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Kode HTML dari Gemini *</label>
+            <button type="button" onclick="downloadHtmlFile()" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Unduh sebagai file .html</span>
+            </button>
+          </div>
+          <textarea
+            id="inp-html"
+            rows="7"
+            required
+            placeholder="<!DOCTYPE html>&#10;<html>&#10;  <!-- Paste seluruh kode HTML hasil generate Gemini di sini -->&#10;</html>"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-300 focus:outline-none focus:border-indigo-500"
+          ></textarea>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-slate-300 space-y-1">
+          <p class="font-semibold text-indigo-300 flex items-center gap-1.5">
+            <i data-lucide="info" class="w-4 h-4 shrink-0"></i>
+            <span>Tips Penyimpanan:</span>
+          </p>
+          <p>
+            • Klik <strong>Simpan & Tampilkan</strong> untuk langsung mencoba dan menyimpan produk di browser Anda.<br/>
+            • Untuk mempublikasikan permanen ke semua pengunjung GitHub Pages, klik <strong>Unduh sebagai file .html</strong>, simpan ke folder <code class="text-indigo-300">produk/</code>, lalu tambahkan ke daftar <code class="text-indigo-300">PRODUK_BAWAAN</code> di <code class="text-indigo-300">index.html</code>.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-2">
+          <button type="button" onclick="closeAddModal()" class="px-4 py-2.5 rounded-xl text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+            Batal
+          </button>
+          <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg transition">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Simpan & Tampilkan</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 3: PANDUAN TAMBAH FILE HTML PERMANEN                -->
+  <!-- ========================================================= -->
+  <div id="guide-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full p-6 sm:p-7 shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <i data-lucide="book-open" class="w-5 h-5 text-indigo-400"></i>
+          Cara Menambahkan File HTML dari Gemini Secara Permanen
+        </h3>
+        <button onclick="closeGuideModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="mt-4 space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p>Agar produk HTML dari Gemini bisa diakses oleh semua orang di <code class="text-indigo-300 font-mono">muchlisre.github.io</code>:</p>
+        <ol class="list-decimal list-inside space-y-2.5 text-slate-300">
+          <li>
+            Simpan kode HTML dari Gemini sebagai file baru di dalam folder <code class="text-emerald-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">produk/</code>, misalnya <code class="text-emerald-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">produk/aplikasi-saya.html</code>.
+          </li>
+          <li>
+            Buka file <code class="text-indigo-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">index.html</code> dan cari bagian <code class="text-amber-300 font-mono">const PRODUK_BAWAAN = [...]</code> di bagian bawah.
+          </li>
+          <li>
+            Tambahkan baris produk baru seperti contoh berikut:
+            <pre class="mt-2 p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-indigo-300 overflow-x-auto">{
+  id: 'aplikasi-saya',
+  title: 'Nama Aplikasi Gemini',
+  category: 'Tools AI',
+  description: 'Deskripsi singkat produk HTML Anda.',
+  url: 'produk/aplikasi-saya.html',
+  date: '2026'
+}</pre>
+          </li>
+          <li>Push perubahan ke GitHub, dan produk Anda langsung tampil di menu <strong>Produk Gemini</strong>!</li>
+        </ol>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button onclick="closeGuideModal()" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition">Mengerti</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 4: VERIFIKASI PASSKEY TERENKRIPSI (SHA-256)         -->
+  <!-- ========================================================= -->
+  <div id="passkey-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-sm w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <i data-lucide="key-round" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Verifikasi Passkey</h3>
+            <p class="text-xs text-slate-400">Masukkan kode akses pemilik</p>
+          </div>
+        </div>
+        <button onclick="closePasskeyModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="passkey-form" onsubmit="handleVerifyPasskey(event)" class="mt-5 space-y-4">
+        <div>
+          <label for="inp-passkey" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+            Kode Passkey
+          </label>
+          <input
+            id="inp-passkey"
+            type="password"
+            inputmode="numeric"
+            maxlength="12"
+            required
+            autocomplete="off"
+            placeholder="••••••"
+            class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-center font-mono text-lg tracking-[0.35em] text-white focus:outline-none focus:border-indigo-500"
+          />
+          <p id="passkey-error" class="hidden text-xs text-rose-400 mt-2 text-center font-medium">
+            Kode passkey salah. Silakan coba lagi.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-end gap-2.5 pt-1">
+          <button type="button" onclick="closePasskeyModal()" class="px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+            Batal
+          </button>
+          <button type="submit" class="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg transition">
+            <i data-lucide="unlock" class="w-3.5 h-3.5"></i>
+            <span>Buka Akses</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- SCRIPT & DAFTAR PRODUK HTML GEMINI                        -->
+  <!-- ========================================================= -->
+  <script>
+    /**
+     * ============================================================================
+     * KONFIGURASI KEAMANAN PASSKEY (SALTED SHA-256 HASH)
+     * Kode asli dienkripsi satu arah menggunakan SHA-256 + Salt (tidak disimpan teks biasa).
+     * ============================================================================
+     */
+    const PASSKEY_SALT = 'muchlis_passkey_v1:';
+    const ENCRYPTED_PASSKEY_HASH = 'c00fc288228b18e810daf8e9eb69b51e8bcad01af5e658205ca9f7aa6633b34c';
+    let pendingPasskeyAction = null;
+
+    function sha256Hash(ascii) {
+      function rightRotate(value, amount) {
+        return (value >>> amount) | (value << (32 - amount));
+      }
+      const mathPow = Math.pow;
+      const maxWord = mathPow(2, 32);
+      let i, j;
+      let result = '';
+      const words = [];
+      const asciiBitLength = ascii.length * 8;
+      let hash = (sha256Hash.h = sha256Hash.h || []);
+      const k = (sha256Hash.k = sha256Hash.k || []);
+      let primeCounter = k.length;
+      const isComposite = {};
+      for (let candidate = 2; primeCounter < 64; candidate++) {
+        if (!isComposite[candidate]) {
+          for (i = 0; i < 313; i += candidate) {
+            isComposite[i] = candidate;
+          }
+          hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
+          k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
+        }
+      }
+      hash = sha256Hash.h.slice(0);
+      ascii += '\x80';
+      while ((ascii.length % 64) - 56) ascii += '\x00';
+      for (i = 0; i < ascii.length; i++) {
+        j = ascii.charCodeAt(i);
+        if (j >> 8) return '';
+        words[i >> 2] |= j << ((3 - (i % 4)) * 8);
+      }
+      words[words.length] = (asciiBitLength / maxWord) | 0;
+      words[words.length] = asciiBitLength;
+      for (j = 0; j < words.length; ) {
+        const w = words.slice(j, (j += 16));
+        const oldHash = hash;
+        hash = hash.slice(0, 8);
+        for (i = 0; i < 64; i++) {
+          const w15 = w[i - 15], w2 = w[i - 2];
+          const a = hash[0], e = hash[4];
+          const temp1 =
+            hash[7] +
+            (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) +
+            ((e & hash[5]) ^ (~e & hash[6])) +
+            k[i] +
+            (w[i] =
+              i < 16
+                ? w[i]
+                : (w[i - 16] +
+                    (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3)) +
+                    w[i - 7] +
+                    (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))) |
+                  0);
+          const temp2 =
+            (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) +
+            ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+          hash = [(temp1 + temp2) | 0].concat(hash);
+          hash[4] = (hash[4] + temp1) | 0;
+        }
+        for (i = 0; i < 8; i++) {
+          hash[i] = (hash[i] + oldHash[i]) | 0;
+        }
+      }
+      for (i = 0; i < 8; i++) {
+        for (j = 3; j + 1; j--) {
+          const b = (hash[i] >> (j * 8)) & 255;
+          result += (b < 16 ? 0 : '') + b.toString(16);
+        }
+      }
+      return result;
+    }
+
+    function requestPasskey(onSuccess) {
+      pendingPasskeyAction = onSuccess;
+      const modal = document.getElementById('passkey-modal');
+      const input = document.getElementById('inp-passkey');
+      const errorEl = document.getElementById('passkey-error');
+      input.value = '';
+      errorEl.classList.add('hidden');
+      modal.classList.remove('hidden');
+      setTimeout(() => input.focus(), 50);
+    }
+
+    function closePasskeyModal() {
+      pendingPasskeyAction = null;
+      document.getElementById('passkey-modal').classList.add('hidden');
+    }
+
+    function handleVerifyPasskey(e) {
+      e.preventDefault();
+      const input = document.getElementById('inp-passkey');
+      const errorEl = document.getElementById('passkey-error');
+      const entered = input.value.trim();
+      const computedHash = sha256Hash(PASSKEY_SALT + entered);
+
+      if (computedHash === ENCRYPTED_PASSKEY_HASH) {
+        const callback = pendingPasskeyAction;
+        closePasskeyModal();
+        if (typeof callback === 'function') callback();
+      } else {
+        errorEl.classList.remove('hidden');
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    /**
+     * ============================================================================
+     * DAFTAR PRODUK HTML DARI GEMINI (PERMANEN)
+     * Tambahkan file .html baru Anda ke folder `produk/` lalu daftarkan di bawah ini!
+     * ============================================================================
+     */
+    const PRODUK_BAWAAN = [
+      {
+        id: 'kalkulator-estimasi-proyek',
+        title: 'Kalkulator Estimasi Proyek & Invoice',
+        category: 'Bisnis & Produktivitas',
+        description: 'Aplikasi interaktif dari Gemini untuk menghitung estimasi biaya pembuatan software, simulasi diskon, dan cetak ringkasan otomatis.',
+        url: 'produk/contoh-gemini.html',
+        date: 'Terbaru',
+        featured: true
+      }
+      // Tambahkan produk HTML Gemini lainnya di sini:
+      // {
+      //   id: 'nama-unik',
+      //   title: 'Judul Produk Gemini',
+      //   category: 'Tools AI',
+      //   description: 'Penjelasan singkat produk...',
+      //   url: 'produk/nama-file.html',
+      //   date: '2026'
+      // }
+    ];
+
+    const STORAGE_KEY = 'muchlis_gemini_custom_products_v1';
+    let activeCategory = 'Semua';
+
+    function getCustomProducts() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveCustomProducts(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    function getAllProducts() {
+      return [...getCustomProducts(), ...PRODUK_BAWAAN];
+    }
+
+    function renderCategories() {
+      const all = getAllProducts();
+      const categories = ['Semua', ...new Set(all.map(p => p.category || 'Lainnya'))];
+      const container = document.getElementById('category-filters');
+
+      container.innerHTML = categories.map(cat => {
+        const isActive = cat === activeCategory;
+        return `
+          <button
+            onclick="setCategory('${cat.replace(/'/g, "\\'")}')"
+            class="px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition ${
+              isActive
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                : 'bg-slate-900/90 text-slate-400 hover:text-white border border-slate-800'
+            }"
+          >
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      renderCategories();
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const all = getAllProducts();
+      const query = (document.getElementById('search-produk')?.value || '').toLowerCase().trim();
+      document.getElementById('stat-products').textContent = all.length;
+
+      const filtered = all.filter(item => {
+        const matchCategory = activeCategory === 'Semua' || item.category === activeCategory;
+        const matchSearch = !query ||
+          item.title.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query) ||
+          (item.category && item.category.toLowerCase().includes(query));
+        return matchCategory && matchSearch;
+      });
+
+      const grid = document.getElementById('products-grid');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full glass-card rounded-2xl p-10 text-center">
+            <p class="text-slate-300 font-semibold">Belum ada produk yang cocok dengan pencarian.</p>
+            <p class="text-slate-500 text-xs mt-1">Klik tombol "Tambah HTML Gemini" di kanan atas untuk menambahkan kode HTML baru.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const isCustom = Boolean(item.isCustom);
+        return `
+          <article class="glass-card rounded-2xl p-6 flex flex-col justify-between relative group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
+                  ${escapeHtml(item.category || 'HTML Gemini')}
+                </span>
+                <div class="flex items-center gap-1.5">
+                  ${isCustom ? `
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Lokal</span>
+                    <button onclick="deleteCustomProduct('${item.id}')" class="p-1 rounded hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 transition" title="Hapus produk ini">
+                      <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                    </button>
+                  ` : `
+                    <span class="text-xs text-slate-500 font-mono">${escapeHtml(item.date || '')}</span>
+                  `}
+                </div>
+              </div>
+
+              <h3 class="text-lg font-bold text-white group-hover:text-indigo-300 transition leading-snug">
+                ${escapeHtml(item.title)}
+              </h3>
+
+              <p class="mt-2 text-sm text-slate-400 leading-relaxed line-clamp-3">
+                ${escapeHtml(item.description)}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2.5">
+              <button
+                onclick="previewProduct('${item.id}')"
+                class="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-sm"
+              >
+                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                <span>Jalankan Produk</span>
+              </button>
+
+              ${item.url ? `
+                <a
+                  href="${item.url}"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white transition"
+                  title="Buka di Tab Baru"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              ` : `
+                <button
+                  onclick="openCustomInNewTab('${item.id}')"
+                  class="inline-flex items-center justify-center p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white transition"
+                  title="Buka di Tab Baru"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </button>
+              `}
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function previewProduct(id) {
+      const product = getAllProducts().find(p => p.id === id);
+      if (!product) return;
+
+      const modal = document.getElementById('preview-modal');
+      const titleEl = document.getElementById('preview-title');
+      const iframe = document.getElementById('preview-iframe');
+      const openTabBtn = document.getElementById('preview-open-tab');
+
+      titleEl.textContent = product.title;
+
+      if (product.url) {
+        iframe.removeAttribute('srcdoc');
+        iframe.src = product.url;
+        openTabBtn.href = product.url;
+        openTabBtn.onclick = null;
+      } else if (product.htmlContent) {
+        iframe.src = 'about:blank';
+        iframe.srcdoc = product.htmlContent;
+        openTabBtn.href = '#';
+        openTabBtn.onclick = (e) => {
+          e.preventDefault();
+          openCustomInNewTab(product.id);
+        };
+      }
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePreviewModal() {
+      const modal = document.getElementById('preview-modal');
+      const iframe = document.getElementById('preview-iframe');
+      iframe.src = 'about:blank';
+      iframe.removeAttribute('srcdoc');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function openCustomInNewTab(id) {
+      const product = getAllProducts().find(p => p.id === id);
+      if (!product || !product.htmlContent) return;
+      const blob = new Blob([product.htmlContent], { type: 'text/html' });
+      const blobUrl = URL.createObjectURL(blob);
+      window.open(blobUrl, '_blank');
+    }
+
+    function openAddModal() {
+      requestPasskey(() => {
+        document.getElementById('add-modal').classList.remove('hidden');
+      });
+    }
+
+    function closeAddModal() {
+      document.getElementById('add-modal').classList.add('hidden');
+    }
+
+    function openGuideModal() {
+      document.getElementById('guide-modal').classList.remove('hidden');
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guide-modal').classList.add('hidden');
+    }
+
+    function handleSaveProduct(e) {
+      e.preventDefault();
+      const title = document.getElementById('inp-title').value.trim();
+      const category = document.getElementById('inp-category').value.trim() || 'Tools AI';
+      const description = document.getElementById('inp-desc').value.trim();
+      const htmlContent = document.getElementById('inp-html').value;
+
+      if (!title || !htmlContent) return;
+
+      const newProduct = {
+        id: 'gemini-' + Date.now(),
+        title,
+        category,
+        description,
+        htmlContent,
+        date: 'Baru saja',
+        isCustom: true
+      };
+
+      const customList = getCustomProducts();
+      customList.unshift(newProduct);
+      saveCustomProducts(customList);
+
+      document.getElementById('add-product-form').reset();
+      closeAddModal();
+      renderCategories();
+      renderProducts();
+      previewProduct(newProduct.id);
+    }
+
+    function deleteCustomProduct(id) {
+      requestPasskey(() => {
+        if (!confirm('Hapus produk HTML ini dari daftar lokal browser?')) return;
+        const updated = getCustomProducts().filter(p => p.id !== id);
+        saveCustomProducts(updated);
+        renderCategories();
+        renderProducts();
+      });
+    }
+
+    function downloadHtmlFile() {
+      const title = document.getElementById('inp-title').value.trim() || 'produk-gemini';
+      const htmlContent = document.getElementById('inp-html').value;
+      if (!htmlContent.trim()) {
+        alert('Tempelkan kode HTML dari Gemini terlebih dahulu.');
+        return;
+      }
+      const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      const blob = new Blob([htmlContent], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${slug || 'produk-gemini'}.html`;
+      a.click();
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    async function loadGitHubData() {
+      const username = 'muchlisre';
+      try {
+        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        if (userRes.ok) {
+          const user = await userRes.json();
+          if (user.name) document.getElementById('gh-name').textContent = user.name;
+          if (user.bio) document.getElementById('gh-bio').textContent = user.bio;
+          if (user.avatar_url) document.getElementById('gh-avatar').src = user.avatar_url;
+          if (typeof user.public_repos === 'number') {
+            document.getElementById('stat-repos').textContent = user.public_repos;
+          }
+        }
+
+        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+        const reposGrid = document.getElementById('repos-grid');
+        if (reposRes.ok) {
+          const repos = await reposRes.json();
+          if (Array.isArray(repos) && repos.length > 0) {
+            reposGrid.innerHTML = repos.map(repo => `
+              <a href="${repo.html_url}" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="font-bold text-white group-hover:text-indigo-400 transition truncate">${escapeHtml(repo.name)}</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 shrink-0"></i>
+                  </div>
+                  <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                    ${escapeHtml(repo.description || 'Repositori proyek di GitHub @muchlisre.')}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-400">
+                  <span class="font-mono text-indigo-300">${escapeHtml(repo.language || 'Code')}</span>
+                  <span class="flex items-center gap-1">
+                    <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400"></i>
+                    ${repo.stargazers_count || 0}
+                  </span>
+                </div>
+              </a>
+            `).join('');
+            lucide.createIcons();
+          } else {
+            reposGrid.innerHTML = `<div class="col-span-full text-center py-6 text-slate-400 text-sm">Belum ada repositori publik yang ditampilkan.</div>`;
+          }
+        }
+      } catch (err) {
+        console.warn('Info GitHub offline/limit:', err);
+      }
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderCategories();
+    renderProducts();
+    loadGitHubData();
+    lucide.createIcons();
+  </script>
 </body>
-
 </html>
