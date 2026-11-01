@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muchlis (@muchlisre) — Profil & Katalog Produk HTML Gemini</title>
-  <meta name="description" content="Halaman profil resmi Muchlis (@muchlisre) dan katalog produk/aplikasi interaktif berbasis HTML dari Gemini." />
+  <title>Muchlis (@muchlisre) — Profil & Portofolio Digital</title>
+  <meta name="description" content="Halaman profil resmi Muchlis (@muchlisre), Software Developer & Kreator Aplikasi Web AI." />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
@@ -21,16 +21,6 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-            }
           }
         }
       }
@@ -68,7 +58,7 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+<body class="min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
 
   <!-- Background Glow Orbs -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
@@ -92,8 +82,8 @@
 
       <!-- Desktop Menu -->
       <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
-        <a href="#beranda" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Beranda</a>
-        <a href="#produk" class="px-3.5 py-2 rounded-lg text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition flex items-center gap-1.5">
+        <a href="#beranda" class="px-3.5 py-2 rounded-lg text-white bg-slate-800/60 transition">Beranda</a>
+        <a href="produk.html" class="px-3.5 py-2 rounded-lg text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition flex items-center gap-1.5">
           <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
           Produk Gemini
         </a>
@@ -102,12 +92,12 @@
         <a href="#kontak" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Kontak</a>
       </nav>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-2.5">
-        <button onclick="openAddModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-600/25 transition">
-          <i data-lucide="plus-circle" class="w-4 h-4"></i>
-          <span>Tambah HTML Gemini</span>
-        </button>
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2">
+        <a href="produk.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-600/25 transition">
+          <i data-lucide="layout-grid" class="w-4 h-4"></i>
+          <span>Menu Produk</span>
+        </a>
       </div>
     </div>
   </header>
@@ -145,10 +135,10 @@
 
           <!-- Quick Stats -->
           <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-slate-400">
-            <div class="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg">
+            <a href="produk.html" class="flex items-center gap-1.5 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg transition">
               <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i>
               <span><strong id="stat-products" class="text-white">0</strong> Produk Gemini</span>
-            </div>
+            </a>
             <div class="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg">
               <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i>
               <span><strong id="stat-repos" class="text-white">-</strong> GitHub Repo</span>
@@ -162,60 +152,42 @@
 
           <!-- Hero Buttons -->
           <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3">
-            <a href="#produk" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-white text-slate-950 hover:bg-slate-200 transition shadow-lg">
+            <a href="produk.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-white text-slate-950 hover:bg-slate-200 transition shadow-lg">
               <i data-lucide="layout-grid" class="w-4 h-4"></i>
-              Lihat Menu Produk
+              <span>Buka Halaman Produk Gemini</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <button onclick="openAddModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm glass hover:bg-slate-800/80 text-white border border-slate-700 transition">
-              <i data-lucide="code-2" class="w-4 h-4 text-indigo-400"></i>
-              Tempel HTML dari Gemini
-            </button>
+            <a href="produk.html#tambah" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm glass hover:bg-slate-800/80 text-white border border-slate-700 transition">
+              <i data-lucide="plus-circle" class="w-4 h-4 text-indigo-400"></i>
+              <span>Tambah HTML dari Gemini</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MENU PRODUK SECTION (HTML DARI GEMINI) -->
-    <section id="produk" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-800/80">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+    <!-- CUPLIKAN PRODUK UNGGULAN SECTION (MENGARAH KE produk.html) -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-800/80">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
           <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">
-            <i data-lucide="Cpu" class="w-4 h-4"></i>
-            <span>Katalog Produk & Aplikasi</span>
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Etalase Terbaru</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white">Menu Produk (HTML Gemini)</h2>
-          <p class="text-slate-400 text-sm sm:text-base mt-1.5 max-w-2xl">
-            Kumpulan aplikasi mini, kalkulator, game, dan tools interaktif satu-file (<code class="text-indigo-300 font-mono text-xs bg-indigo-950/60 px-1.5 py-0.5 rounded">.html</code>) yang dibuat dengan Gemini. Bisa langsung dijalankan di halaman ini atau dibuka penuh!
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Produk Unggulan HTML Gemini</h2>
+          <p class="text-slate-400 text-sm mt-1">
+            Cuplikan aplikasi interaktif terbaru lengkap dengan thumbnail. Lihat katalog penuh di halaman khusus produk.
           </p>
         </div>
 
-        <!-- Search & Filter Controls -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <div class="relative">
-            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-            <input
-              id="search-produk"
-              type="text"
-              placeholder="Cari produk..."
-              oninput="renderProducts()"
-              class="w-full sm:w-56 pl-9 pr-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-            />
-          </div>
-          <button onclick="openGuideModal()" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition">
-            <i data-lucide="help-circle" class="w-4 h-4 text-indigo-400"></i>
-            <span>Cara Tambah Permanen</span>
-          </button>
-        </div>
+        <a href="produk.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600/15 hover:bg-indigo-600/25 border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-semibold transition shrink-0">
+          <span>Lihat Semua Produk</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
       </div>
 
-      <!-- Category Pills -->
-      <div id="category-filters" class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
-        <!-- Diisi otomatis via JS -->
-      </div>
-
-      <!-- Products Grid -->
-      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Diisi otomatis via JS -->
+      <div id="featured-products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Diisi otomatis via produk-data.js -->
       </div>
     </section>
 
@@ -252,7 +224,7 @@
             Saya senang mengeksplorasi teknologi web modern, otomasi, dan pemanfaatan AI generatif seperti <strong class="text-white">Google Gemini</strong> untuk mempercepat pembuatan prototipe produk digital yang fungsional.
           </p>
           <p class="text-slate-400 text-sm leading-relaxed">
-            Halaman ini berfungsi sebagai profil sekaligus katalog terpusat tempat saya membagikan hasil eksperimen kode HTML dari Gemini agar mudah diakses kapan saja.
+            Kunjungi halaman <a href="produk.html" class="text-indigo-400 hover:underline font-medium">Produk Gemini</a> untuk mencoba langsung berbagai aplikasi HTML interaktif yang telah saya buat.
           </p>
         </div>
 
@@ -317,20 +289,19 @@
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© <span id="year"></span> Muchlis (@muchlisre). Dibuat untuk GitHub Pages & Katalog HTML Gemini.</p>
       <div class="flex items-center gap-4">
+        <a href="produk.html" class="hover:text-slate-300 transition">Halaman Produk</a>
         <a href="#beranda" class="hover:text-slate-300 transition">Ke Atas ↑</a>
       </div>
     </div>
   </footer>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 1: LIVE PREVIEW PRODUK HTML GEMINI                  -->
-  <!-- ========================================================= -->
+  <!-- MODAL LIVE PREVIEW (Untuk Cuplikan Produk di Beranda) -->
   <div id="preview-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex flex-col">
     <div class="h-14 px-4 sm:px-6 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
       <div class="flex items-center gap-3 min-w-0">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
         <h3 id="preview-title" class="font-bold text-white text-sm sm:text-base truncate">Preview Produk</h3>
-        <span id="preview-badge" class="hidden sm:inline-block text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">HTML Gemini</span>
+        <span class="hidden sm:inline-block text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">HTML Gemini</span>
       </div>
       <div class="flex items-center gap-2">
         <a id="preview-open-tab" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 transition">
@@ -347,464 +318,16 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 2: TAMBAH / TEMPEL HTML DARI GEMINI                 -->
-  <!-- ========================================================= -->
-  <div id="add-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl my-8">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-        <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
-            <i data-lucide="sparkles" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-white">Tambah Produk HTML dari Gemini</h3>
-            <p class="text-xs text-slate-400">Tempel kode HTML dari Gemini atau tautkan file di folder <code class="text-indigo-300">produk/</code></p>
-          </div>
-        </div>
-        <button onclick="closeAddModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <form id="add-product-form" onsubmit="handleSaveProduct(event)" class="mt-5 space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Nama Produk / Aplikasi *</label>
-            <input id="inp-title" type="text" required placeholder="Contoh: Kalkulator KPR Pintar" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
-          </div>
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Kategori</label>
-            <input id="inp-category" type="text" placeholder="Contoh: Tools, Bisnis, Game, Edukasi" value="Tools AI" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Deskripsi Singkat *</label>
-          <input id="inp-desc" type="text" required placeholder="Penjelasan singkat fungsi aplikasi HTML dari Gemini ini..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
-        </div>
-
-        <div>
-          <div class="flex items-center justify-between mb-1.5">
-            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Kode HTML dari Gemini *</label>
-            <button type="button" onclick="downloadHtmlFile()" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
-              <i data-lucide="download" class="w-3.5 h-3.5"></i>
-              <span>Unduh sebagai file .html</span>
-            </button>
-          </div>
-          <textarea
-            id="inp-html"
-            rows="7"
-            required
-            placeholder="<!DOCTYPE html>&#10;<html>&#10;  <!-- Paste seluruh kode HTML hasil generate Gemini di sini -->&#10;</html>"
-            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-300 focus:outline-none focus:border-indigo-500"
-          ></textarea>
-        </div>
-
-        <div class="p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-slate-300 space-y-1">
-          <p class="font-semibold text-indigo-300 flex items-center gap-1.5">
-            <i data-lucide="info" class="w-4 h-4 shrink-0"></i>
-            <span>Tips Penyimpanan:</span>
-          </p>
-          <p>
-            • Klik <strong>Simpan & Tampilkan</strong> untuk langsung mencoba dan menyimpan produk di browser Anda.<br/>
-            • Untuk mempublikasikan permanen ke semua pengunjung GitHub Pages, klik <strong>Unduh sebagai file .html</strong>, simpan ke folder <code class="text-indigo-300">produk/</code>, lalu tambahkan ke daftar <code class="text-indigo-300">PRODUK_BAWAAN</code> di <code class="text-indigo-300">index.html</code>.
-          </p>
-        </div>
-
-        <div class="flex items-center justify-end gap-3 pt-2">
-          <button type="button" onclick="closeAddModal()" class="px-4 py-2.5 rounded-xl text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
-            Batal
-          </button>
-          <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg transition">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-            <span>Simpan & Tampilkan</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- ========================================================= -->
-  <!-- MODAL 3: PANDUAN TAMBAH FILE HTML PERMANEN                -->
-  <!-- ========================================================= -->
-  <div id="guide-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full p-6 sm:p-7 shadow-2xl">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-          <i data-lucide="book-open" class="w-5 h-5 text-indigo-400"></i>
-          Cara Menambahkan File HTML dari Gemini Secara Permanen
-        </h3>
-        <button onclick="closeGuideModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <div class="mt-4 space-y-4 text-sm text-slate-300 leading-relaxed">
-        <p>Agar produk HTML dari Gemini bisa diakses oleh semua orang di <code class="text-indigo-300 font-mono">muchlisre.github.io</code>:</p>
-        <ol class="list-decimal list-inside space-y-2.5 text-slate-300">
-          <li>
-            Simpan kode HTML dari Gemini sebagai file baru di dalam folder <code class="text-emerald-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">produk/</code>, misalnya <code class="text-emerald-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">produk/aplikasi-saya.html</code>.
-          </li>
-          <li>
-            Buka file <code class="text-indigo-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">index.html</code> dan cari bagian <code class="text-amber-300 font-mono">const PRODUK_BAWAAN = [...]</code> di bagian bawah.
-          </li>
-          <li>
-            Tambahkan baris produk baru seperti contoh berikut:
-            <pre class="mt-2 p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-indigo-300 overflow-x-auto">{
-  id: 'aplikasi-saya',
-  title: 'Nama Aplikasi Gemini',
-  category: 'Tools AI',
-  description: 'Deskripsi singkat produk HTML Anda.',
-  url: 'produk/aplikasi-saya.html',
-  date: '2026'
-}</pre>
-          </li>
-          <li>Push perubahan ke GitHub, dan produk Anda langsung tampil di menu <strong>Produk Gemini</strong>!</li>
-        </ol>
-      </div>
-      <div class="mt-6 flex justify-end">
-        <button onclick="closeGuideModal()" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition">Mengerti</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================= -->
-  <!-- MODAL 4: VERIFIKASI PASSKEY TERENKRIPSI (SHA-256)         -->
-  <!-- ========================================================= -->
-  <div id="passkey-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-sm w-full p-6 shadow-2xl">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-        <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
-            <i data-lucide="key-round" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="text-base font-bold text-white">Verifikasi Passkey</h3>
-            <p class="text-xs text-slate-400">Masukkan kode akses pemilik</p>
-          </div>
-        </div>
-        <button onclick="closePasskeyModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <form id="passkey-form" onsubmit="handleVerifyPasskey(event)" class="mt-5 space-y-4">
-        <div>
-          <label for="inp-passkey" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-            Kode Passkey
-          </label>
-          <input
-            id="inp-passkey"
-            type="password"
-            inputmode="numeric"
-            maxlength="12"
-            required
-            autocomplete="off"
-            placeholder="••••••"
-            class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-center font-mono text-lg tracking-[0.35em] text-white focus:outline-none focus:border-indigo-500"
-          />
-          <p id="passkey-error" class="hidden text-xs text-rose-400 mt-2 text-center font-medium">
-            Kode passkey salah. Silakan coba lagi.
-          </p>
-        </div>
-
-        <div class="flex items-center justify-end gap-2.5 pt-1">
-          <button type="button" onclick="closePasskeyModal()" class="px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
-            Batal
-          </button>
-          <button type="submit" class="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg transition">
-            <i data-lucide="unlock" class="w-3.5 h-3.5"></i>
-            <span>Buka Akses</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- ========================================================= -->
-  <!-- SCRIPT & DAFTAR PRODUK HTML GEMINI                        -->
-  <!-- ========================================================= -->
+  <!-- Shared Product Data & Logic -->
+  <script src="produk-data.js"></script>
   <script>
-    /**
-     * ============================================================================
-     * KONFIGURASI KEAMANAN PASSKEY (SALTED SHA-256 HASH)
-     * Kode asli dienkripsi satu arah menggunakan SHA-256 + Salt (tidak disimpan teks biasa).
-     * ============================================================================
-     */
-    const PASSKEY_SALT = 'muchlis_passkey_v1:';
-    const ENCRYPTED_PASSKEY_HASH = 'c00fc288228b18e810daf8e9eb69b51e8bcad01af5e658205ca9f7aa6633b34c';
-    let pendingPasskeyAction = null;
-
-    function sha256Hash(ascii) {
-      function rightRotate(value, amount) {
-        return (value >>> amount) | (value << (32 - amount));
-      }
-      const mathPow = Math.pow;
-      const maxWord = mathPow(2, 32);
-      let i, j;
-      let result = '';
-      const words = [];
-      const asciiBitLength = ascii.length * 8;
-      let hash = (sha256Hash.h = sha256Hash.h || []);
-      const k = (sha256Hash.k = sha256Hash.k || []);
-      let primeCounter = k.length;
-      const isComposite = {};
-      for (let candidate = 2; primeCounter < 64; candidate++) {
-        if (!isComposite[candidate]) {
-          for (i = 0; i < 313; i += candidate) {
-            isComposite[i] = candidate;
-          }
-          hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
-          k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
-        }
-      }
-      hash = sha256Hash.h.slice(0);
-      ascii += '\x80';
-      while ((ascii.length % 64) - 56) ascii += '\x00';
-      for (i = 0; i < ascii.length; i++) {
-        j = ascii.charCodeAt(i);
-        if (j >> 8) return '';
-        words[i >> 2] |= j << ((3 - (i % 4)) * 8);
-      }
-      words[words.length] = (asciiBitLength / maxWord) | 0;
-      words[words.length] = asciiBitLength;
-      for (j = 0; j < words.length; ) {
-        const w = words.slice(j, (j += 16));
-        const oldHash = hash;
-        hash = hash.slice(0, 8);
-        for (i = 0; i < 64; i++) {
-          const w15 = w[i - 15], w2 = w[i - 2];
-          const a = hash[0], e = hash[4];
-          const temp1 =
-            hash[7] +
-            (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) +
-            ((e & hash[5]) ^ (~e & hash[6])) +
-            k[i] +
-            (w[i] =
-              i < 16
-                ? w[i]
-                : (w[i - 16] +
-                    (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3)) +
-                    w[i - 7] +
-                    (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))) |
-                  0);
-          const temp2 =
-            (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) +
-            ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
-          hash = [(temp1 + temp2) | 0].concat(hash);
-          hash[4] = (hash[4] + temp1) | 0;
-        }
-        for (i = 0; i < 8; i++) {
-          hash[i] = (hash[i] + oldHash[i]) | 0;
-        }
-      }
-      for (i = 0; i < 8; i++) {
-        for (j = 3; j + 1; j--) {
-          const b = (hash[i] >> (j * 8)) & 255;
-          result += (b < 16 ? 0 : '') + b.toString(16);
-        }
-      }
-      return result;
-    }
-
-    function requestPasskey(onSuccess) {
-      pendingPasskeyAction = onSuccess;
-      const modal = document.getElementById('passkey-modal');
-      const input = document.getElementById('inp-passkey');
-      const errorEl = document.getElementById('passkey-error');
-      input.value = '';
-      errorEl.classList.add('hidden');
-      modal.classList.remove('hidden');
-      setTimeout(() => input.focus(), 50);
-    }
-
-    function closePasskeyModal() {
-      pendingPasskeyAction = null;
-      document.getElementById('passkey-modal').classList.add('hidden');
-    }
-
-    function handleVerifyPasskey(e) {
-      e.preventDefault();
-      const input = document.getElementById('inp-passkey');
-      const errorEl = document.getElementById('passkey-error');
-      const entered = input.value.trim();
-      const computedHash = sha256Hash(PASSKEY_SALT + entered);
-
-      if (computedHash === ENCRYPTED_PASSKEY_HASH) {
-        const callback = pendingPasskeyAction;
-        closePasskeyModal();
-        if (typeof callback === 'function') callback();
-      } else {
-        errorEl.classList.remove('hidden');
-        input.value = '';
-        input.focus();
-      }
-    }
-
-    /**
-     * ============================================================================
-     * DAFTAR PRODUK HTML DARI GEMINI (PERMANEN)
-     * Tambahkan file .html baru Anda ke folder `produk/` lalu daftarkan di bawah ini!
-     * ============================================================================
-     */
-    const PRODUK_BAWAAN = [
-      {
-        id: 'kalkulator-estimasi-proyek',
-        title: 'Kalkulator Estimasi Proyek & Invoice',
-        category: 'Bisnis & Produktivitas',
-        description: 'Aplikasi interaktif dari Gemini untuk menghitung estimasi biaya pembuatan software, simulasi diskon, dan cetak ringkasan otomatis.',
-        url: 'produk/contoh-gemini.html',
-        date: 'Terbaru',
-        featured: true
-      }
-      // Tambahkan produk HTML Gemini lainnya di sini:
-      // {
-      //   id: 'nama-unik',
-      //   title: 'Judul Produk Gemini',
-      //   category: 'Tools AI',
-      //   description: 'Penjelasan singkat produk...',
-      //   url: 'produk/nama-file.html',
-      //   date: '2026'
-      // }
-    ];
-
-    const STORAGE_KEY = 'muchlis_gemini_custom_products_v1';
-    let activeCategory = 'Semua';
-
-    function getCustomProducts() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : [];
-      } catch (e) {
-        return [];
-      }
-    }
-
-    function saveCustomProducts(list) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-    }
-
-    function getAllProducts() {
-      return [...getCustomProducts(), ...PRODUK_BAWAAN];
-    }
-
-    function renderCategories() {
+    function renderFeaturedProducts() {
       const all = getAllProducts();
-      const categories = ['Semua', ...new Set(all.map(p => p.category || 'Lainnya'))];
-      const container = document.getElementById('category-filters');
-
-      container.innerHTML = categories.map(cat => {
-        const isActive = cat === activeCategory;
-        return `
-          <button
-            onclick="setCategory('${cat.replace(/'/g, "\\'")}')"
-            class="px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition ${
-              isActive
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                : 'bg-slate-900/90 text-slate-400 hover:text-white border border-slate-800'
-            }"
-          >
-            ${cat}
-          </button>
-        `;
-      }).join('');
-    }
-
-    function setCategory(cat) {
-      activeCategory = cat;
-      renderCategories();
-      renderProducts();
-    }
-
-    function renderProducts() {
-      const all = getAllProducts();
-      const query = (document.getElementById('search-produk')?.value || '').toLowerCase().trim();
       document.getElementById('stat-products').textContent = all.length;
 
-      const filtered = all.filter(item => {
-        const matchCategory = activeCategory === 'Semua' || item.category === activeCategory;
-        const matchSearch = !query ||
-          item.title.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query) ||
-          (item.category && item.category.toLowerCase().includes(query));
-        return matchCategory && matchSearch;
-      });
-
-      const grid = document.getElementById('products-grid');
-
-      if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full glass-card rounded-2xl p-10 text-center">
-            <p class="text-slate-300 font-semibold">Belum ada produk yang cocok dengan pencarian.</p>
-            <p class="text-slate-500 text-xs mt-1">Klik tombol "Tambah HTML Gemini" di kanan atas untuk menambahkan kode HTML baru.</p>
-          </div>
-        `;
-        return;
-      }
-
-      grid.innerHTML = filtered.map(item => {
-        const isCustom = Boolean(item.isCustom);
-        return `
-          <article class="glass-card rounded-2xl p-6 flex flex-col justify-between relative group">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-4">
-                <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
-                  ${escapeHtml(item.category || 'HTML Gemini')}
-                </span>
-                <div class="flex items-center gap-1.5">
-                  ${isCustom ? `
-                    <span class="text-[11px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Lokal</span>
-                    <button onclick="deleteCustomProduct('${item.id}')" class="p-1 rounded hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 transition" title="Hapus produk ini">
-                      <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-                    </button>
-                  ` : `
-                    <span class="text-xs text-slate-500 font-mono">${escapeHtml(item.date || '')}</span>
-                  `}
-                </div>
-              </div>
-
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-300 transition leading-snug">
-                ${escapeHtml(item.title)}
-              </h3>
-
-              <p class="mt-2 text-sm text-slate-400 leading-relaxed line-clamp-3">
-                ${escapeHtml(item.description)}
-              </p>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-2.5">
-              <button
-                onclick="previewProduct('${item.id}')"
-                class="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-sm"
-              >
-                <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                <span>Jalankan Produk</span>
-              </button>
-
-              ${item.url ? `
-                <a
-                  href="${item.url}"
-                  target="_blank"
-                  rel="noopener"
-                  class="inline-flex items-center justify-center p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white transition"
-                  title="Buka di Tab Baru"
-                >
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              ` : `
-                <button
-                  onclick="openCustomInNewTab('${item.id}')"
-                  class="inline-flex items-center justify-center p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white transition"
-                  title="Buka di Tab Baru"
-                >
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </button>
-              `}
-            </div>
-          </article>
-        `;
-      }).join('');
-
+      const featured = all.slice(0, 3);
+      const grid = document.getElementById('featured-products-grid');
+      grid.innerHTML = featured.map(item => renderProductCard(item, { allowDelete: false })).join('');
       lucide.createIcons();
     }
 
@@ -853,87 +376,6 @@
       const blob = new Blob([product.htmlContent], { type: 'text/html' });
       const blobUrl = URL.createObjectURL(blob);
       window.open(blobUrl, '_blank');
-    }
-
-    function openAddModal() {
-      requestPasskey(() => {
-        document.getElementById('add-modal').classList.remove('hidden');
-      });
-    }
-
-    function closeAddModal() {
-      document.getElementById('add-modal').classList.add('hidden');
-    }
-
-    function openGuideModal() {
-      document.getElementById('guide-modal').classList.remove('hidden');
-    }
-
-    function closeGuideModal() {
-      document.getElementById('guide-modal').classList.add('hidden');
-    }
-
-    function handleSaveProduct(e) {
-      e.preventDefault();
-      const title = document.getElementById('inp-title').value.trim();
-      const category = document.getElementById('inp-category').value.trim() || 'Tools AI';
-      const description = document.getElementById('inp-desc').value.trim();
-      const htmlContent = document.getElementById('inp-html').value;
-
-      if (!title || !htmlContent) return;
-
-      const newProduct = {
-        id: 'gemini-' + Date.now(),
-        title,
-        category,
-        description,
-        htmlContent,
-        date: 'Baru saja',
-        isCustom: true
-      };
-
-      const customList = getCustomProducts();
-      customList.unshift(newProduct);
-      saveCustomProducts(customList);
-
-      document.getElementById('add-product-form').reset();
-      closeAddModal();
-      renderCategories();
-      renderProducts();
-      previewProduct(newProduct.id);
-    }
-
-    function deleteCustomProduct(id) {
-      requestPasskey(() => {
-        if (!confirm('Hapus produk HTML ini dari daftar lokal browser?')) return;
-        const updated = getCustomProducts().filter(p => p.id !== id);
-        saveCustomProducts(updated);
-        renderCategories();
-        renderProducts();
-      });
-    }
-
-    function downloadHtmlFile() {
-      const title = document.getElementById('inp-title').value.trim() || 'produk-gemini';
-      const htmlContent = document.getElementById('inp-html').value;
-      if (!htmlContent.trim()) {
-        alert('Tempelkan kode HTML dari Gemini terlebih dahulu.');
-        return;
-      }
-      const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      const blob = new Blob([htmlContent], { type: 'text/html' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = `${slug || 'produk-gemini'}.html`;
-      a.click();
-    }
-
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
     }
 
     async function loadGitHubData() {
@@ -986,8 +428,7 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
-    renderCategories();
-    renderProducts();
+    renderFeaturedProducts();
     loadGitHubData();
     lucide.createIcons();
   </script>

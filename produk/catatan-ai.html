@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generator Prompt & Catatan AI — Produk HTML Gemini</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6 sm:p-10 font-sans">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-6">
+      <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-2">
+        Tools Produktivitas AI
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-bold text-white">Susun Prompt Gemini Terstruktur</h1>
+      <p class="text-sm text-slate-400 mt-1">Bantu rancang prompt yang rapi untuk coding, analisis, dan penulisan konten.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Peran AI (Role)</label>
+          <select id="role" onchange="updatePrompt()" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white">
+            <option value="Senior Full-Stack Web Developer">Senior Full-Stack Web Developer</option>
+            <option value="UI/UX Product Designer">UI/UX Product Designer</option>
+            <option value="Data Analyst & Business Consultant">Data Analyst & Business Consultant</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Tujuan / Tugas Utama</label>
+          <input id="task" type="text" value="Buatkan aplikasi dashboard kasir UMKM dalam 1 file HTML" oninput="updatePrompt()" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Format Output</label>
+          <select id="format" onchange="updatePrompt()" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white">
+            <option value="Kode HTML5 lengkap dengan Tailwind CSS & JavaScript interaktif">HTML5 + Tailwind + JS (Satu File)</option>
+            <option value="Panduan langkah demi langkah beserta contoh kode">Panduan Langkah demi Langkah</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-950/50 to-slate-900 border border-purple-500/30 rounded-2xl p-5 flex flex-col justify-between">
+        <div>
+          <div class="text-xs font-semibold uppercase text-purple-300 mb-2">Hasil Prompt Siap Pakai</div>
+          <pre id="output" class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 text-xs text-slate-200 whitespace-pre-wrap font-mono leading-relaxed"></pre>
+        </div>
+        <button onclick="copyPrompt()" id="btn-copy" class="mt-4 w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition">
+          Salin Prompt
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updatePrompt() {
+      const role = document.getElementById('role').value;
+      const task = document.getElementById('task').value;
+      const format = document.getElementById('format').value;
+      document.getElementById('output').textContent =
+`Bertindaklah sebagai ${role}.
+
+Tugas Utama:
+${task}
+
+Kriteria & Format Output:
+- ${format}
+- Gunakan desain modern, responsif, dan langsung siap dijalankan tanpa instalasi tambahan.`;
+    }
+    function copyPrompt() {
+      navigator.clipboard.writeText(document.getElementById('output').textContent);
+      const btn = document.getElementById('btn-copy');
+      btn.textContent = 'Prompt Tersalin!';
+      setTimeout(() => btn.textContent = 'Salin Prompt', 2000);
+    }
+    updatePrompt();
+  </script>
+</body>
+</html>
